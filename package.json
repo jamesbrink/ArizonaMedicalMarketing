@@ -1,0 +1,12 @@
+{
+  "name": "arizona-medical-marketing",
+  "version": "1.0.0",
+  "description": "Arizona Medical Marketing website",
+  "main": "index.html",
+  "scripts": {
+    "start": "http-server -p 3000"
+  },
+  "dependencies": {
+    "http-server": "^14.1.1"
+  }
+}

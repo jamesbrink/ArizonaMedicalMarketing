@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arizona Medical Marketing - Healthcare Practice Growth Specialists</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#8B0000',
+                        secondary: '#FFA500',
+                        desert: '#FFB347',
+                    }
+                }
+            }
+        }
+    </script>
+    <style type="text/tailwindcss">
+        @layer utilities {
+            .text-shadow {
+                text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+            }
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Navigation -->
+    <nav class="fixed w-full bg-white shadow-md z-50">
+        <div class="container mx-auto px-6 py-3">
+            <div class="flex items-center justify-between">
+                <div class="flex items-center">
+                    <img src="logo.png" alt="Arizona Medical Marketing" class="h-14 w-auto object-contain">
+                </div>
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#home" class="text-gray-700 hover:text-primary transition">Home</a>
+                    <a href="#about" class="text-gray-700 hover:text-primary transition">About</a>
+                    <a href="#services" class="text-gray-700 hover:text-primary transition">Services</a>
+                    <a href="#contact" class="bg-primary text-white px-6 py-2 rounded-full hover:bg-red-800 transition">Contact Us</a>
+                </div>
+                <button class="md:hidden text-gray-700" onclick="toggleMenu()">
+                    <i class="fas fa-bars text-2xl"></i>
+                </button>
+            </div>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white">
+            <div class="px-4 py-3 space-y-4">
+                <a href="#home" class="block text-gray-700">Home</a>
+                <a href="#about" class="block text-gray-700">About</a>
+                <a href="#services" class="block text-gray-700">Services</a>
+                <a href="#contact" class="block text-primary font-bold">Contact Us</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="pt-24 pb-12 md:pt-32 md:pb-24 bg-gradient-to-br from-desert to-primary">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col md:flex-row items-center">
+                <div class="md:w-1/2 text-center md:text-left">
+                    <h1 class="text-4xl md:text-6xl font-bold text-white mb-6 text-shadow">
+                        Welcome to Arizona Medical Marketing
+                    </h1>
+                    <p class="text-xl text-white mb-8">
+                        Connecting medical professionals with the referral networks they need to grow their practices.
+                    </p>
+                    <a href="#contact" class="inline-block bg-white text-primary px-8 py-3 rounded-full text-lg font-semibold hover:bg-gray-100 transition">
+                        Get Started
+                    </a>
+                </div>
+                <div class="md:w-1/2 mt-12 md:mt-0">
+                    <img src="logo.png" alt="Arizona Medical Marketing" class="w-full max-w-md mx-auto h-auto object-contain" style="aspect-ratio: 448/422;">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- What Makes Us Different -->
+    <section id="about" class="py-16 bg-white">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-12">What Makes Us Different?</h2>
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="bg-gray-50 p-6 rounded-lg shadow-lg hover:shadow-xl transition">
+                    <div class="text-primary text-3xl mb-4">
+                        <i class="fas fa-dollar-sign"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-4">Affordable Marketing That Works</h3>
+                    <p class="text-gray-600">
+                        Professional-grade marketing services at a fraction of the cost of running an in-house team.
+                    </p>
+                </div>
+                <div class="bg-gray-50 p-6 rounded-lg shadow-lg hover:shadow-xl transition">
+                    <div class="text-primary text-3xl mb-4">
+                        <i class="fas fa-bullseye"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-4">Strategic and Targeted Outreach</h3>
+                    <p class="text-gray-600">
+                        We identify key healthcare providers most likely to benefit from your services.
+                    </p>
+                </div>
+                <div class="bg-gray-50 p-6 rounded-lg shadow-lg hover:shadow-xl transition">
+                    <div class="text-primary text-3xl mb-4">
+                        <i class="fas fa-tasks"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-4">Streamlined Efficiency</h3>
+                    <p class="text-gray-600">
+                        Focus on patient care while we handle your marketing and outreach needs.
+                    </p>
+                </div>
+                <div class="bg-gray-50 p-6 rounded-lg shadow-lg hover:shadow-xl transition">
+                    <div class="text-primary text-3xl mb-4">
+                        <i class="fas fa-handshake"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-4">Building Personal Connections</h3>
+                    <p class="text-gray-600">
+                        Creating meaningful, face-to-face connections that lead to lasting partnerships.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-16 bg-gray-50">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-12">How We Can Help</h2>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition">
+                    <div class="text-primary text-3xl mb-4">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-4">Custom Marketing Plans</h3>
+                    <p class="text-gray-600">
+                        Tailored strategies aligned with your practice's unique goals and specialties.
+                    </p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition">
+                    <div class="text-primary text-3xl mb-4">
+                        <i class="fas fa-hospital-user"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-4">Office Visits That Count</h3>
+                    <p class="text-gray-600">
+                        Personalized visits to healthcare providers to build strong, lasting relationships.
+                    </p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition">
+                    <div class="text-primary text-3xl mb-4">
+                        <i class="fas fa-chart-bar"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-4">Detailed Reporting</h3>
+                    <p class="text-gray-600">
+                        Clear and actionable monthly progress reports to track your success.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-16 bg-primary">
+        <div class="container mx-auto px-6">
+            <div class="bg-white rounded-lg shadow-xl p-8 md:p-12 max-w-4xl mx-auto">
+                <h2 class="text-3xl md:text-4xl font-bold text-center mb-8">Contact Us Today</h2>
+                <p class="text-center text-gray-600 mb-8">
+                    Ready to see how Arizona Medical Marketing can help you grow your practice? 
+                    Contact us now to schedule a consultation.
+                </p>
+                <form class="space-y-6">
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div>
+                            <label class="block text-gray-700 mb-2" for="name">Name</label>
+                            <input type="text" id="name" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:border-primary">
+                        </div>
+                        <div>
+                            <label class="block text-gray-700 mb-2" for="email">Email</label>
+                            <input type="email" id="email" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:border-primary">
+                        </div>
+                    </div>
+                    <div>
+                        <label class="block text-gray-700 mb-2" for="message">Message</label>
+                        <textarea id="message" rows="4" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:border-primary"></textarea>
+                    </div>
+                    <button type="submit" class="w-full bg-primary text-white py-3 rounded-lg hover:bg-red-800 transition">
+                        Send Message
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-8">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-4 md:mb-0">
+                    <img src="logo.png" alt="Arizona Medical Marketing" class="h-10 w-auto object-contain">
+                </div>
+                <div class="text-center md:text-right">
+                    <p>&copy; 2024 Arizona Medical Marketing. All rights reserved.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function toggleMenu() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        }
+    </script>
+</body>
+</html>
