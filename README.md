@@ -59,12 +59,15 @@ ArizonaMedicalMarketing/
 
 ## Deployment
 
-This is a static website that can be deployed to any web hosting service that supports static sites, such as:
-- GitHub Pages
-- Netlify
-- Vercel
-- AWS S3
-- Any traditional web hosting service
+This website is automatically deployed to GitHub Pages using GitHub Actions. You can view the live site at:
+```
+https://[your-username].github.io/ArizonaMedicalMarketing/
+```
+
+### Deployment Process
+- The site is automatically deployed when changes are pushed to the main branch
+- Deployment status can be monitored in the GitHub Actions tab
+- The deployment workflow is defined in `.github/workflows/deploy.yml`
 
 ## License
 
