@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex, nofollow">
+    <title>Arizona Medical Marketing - Business Card</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrious/4.0.2/qrious.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#8B0000',
+                        secondary: '#FFA500',
+                        desert: '#FFB347',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        @page {
+            size: 3.5in 2in landscape;
+            margin: 0;
+        }
+        @media print {
+            body {
+                width: 3.5in;
+                height: 2in;
+                margin: 0;
+                padding: 0;
+                print-color-adjust: exact;
+                -webkit-print-color-adjust: exact;
+            }
+            .no-print {
+                display: none;
+            }
+            .print-only {
+                display: block !important;
+            }
+            .business-card {
+                transform: scale(1) !important;
+                margin: 0 !important;
+                box-shadow: none !important;
+                position: relative !important;
+                left: 0 !important;
+                top: 0 !important;
+            }
+            .card-container {
+                page-break-after: always;
+                height: 2in;
+                width: 3.5in;
+                position: relative;
+                margin: 0;
+                padding: 0;
+            }
+            .back-card-container {
+                page-break-before: always;
+            }
+        }
+        /* Card Specific Styles */
+        .card1 {
+            --card-primary: #8B0000;
+            --card-secondary: #FFA500;
+            --card-gradient: linear-gradient(135deg, 
+                var(--card-primary) 0%, 
+                #990000 35%,
+                var(--card-primary) 50%,
+                var(--card-secondary) 100%
+            );
+        }
+        
+        .business-card {
+            width: 3.5in;
+            height: 2in;
+            transform: scale(2);
+            transform-origin: top center;
+            position: relative;
+            border-radius: 0.125rem;
+            overflow: hidden;
+            margin-bottom: 4in;
+        }
+        .preview-container {
+            margin-bottom: 6rem;
+        }
+        .business-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('./card.png');
+            background-size: cover;
+            background-position: center;
+            opacity: 0.08;
+            z-index: 1;
+        }
+        .card-back::before {
+            opacity: 0.15;
+        }
+        .business-card::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: var(--card-gradient);
+            z-index: 0;
+            box-shadow: inset 0 0 60px rgba(0,0,0,0.3);
+        }
+        .card-content {
+            position: relative;
+            height: 100%;
+            width: 100%;
+            z-index: 2;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+        }
+        .logo-qr-container {
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: flex-end;
+            height: 100%;
+            padding-top: 0.25rem;
+        }
+        .logo-container {
+            width: 100%;
+        }
+        .qr-container {
+            background: transparent;
+            padding: 4px;
+            width: fit-content;
+            margin-top: auto;
+            padding-bottom: 0;
+            transform: translateY(10px);  /* Push QR code down slightly */
+        }
+        #qr {
+            filter: brightness(0) invert(1);  /* Make QR code white */
+            width: 65px;
+            height: 65px;
+        }
+        .contact-icon {
+            width: 16px;
+            display: inline-block;
+            text-align: center;
+            margin-right: 6px;
+            opacity: 0.9;
+        }
+        .contact-text {
+            font-size: 11px;
+            line-height: 1.4;
+            letter-spacing: 0.02em;
+            display: flex;
+            align-items: center;
+        }
+    </style>
+</head>
+<body class="bg-gray-100 min-h-screen">
+    <div class="container mx-auto px-4 py-8">
+        <!-- Card 1 -->
+        <section id="card1" class="card1 mb-16">
+            <h2 class="text-3xl font-bold text-primary mb-8 no-print">Arizona Medical Marketing - Standard Card</h2>
+            
+            <!-- Print Instructions -->
+            <div class="no-print bg-white shadow-lg p-8 mb-8 max-w-2xl mx-auto">
+                <div class="flex justify-between items-center mb-6">
+                    <h3 class="text-2xl font-bold text-primary">Print Instructions</h3>
+                    <button onclick="printCard('card1')" class="bg-primary text-white px-6 py-3 text-lg hover:bg-red-900 transition-colors">
+                        <i class="fas fa-print mr-2"></i> Print This Card
+                    </button>
+                </div>
+                <ul class="space-y-3 text-lg">
+                    <li class="flex items-center">
+                        <i class="fas fa-print text-primary mr-3"></i>
+                        Print at 300 DPI or higher
+                    </li>
+                    <li class="flex items-center">
+                        <i class="fas fa-file-alt text-primary mr-3"></i>
+                        Use high-quality cardstock (100lb or higher)
+                    </li>
+                    <li class="flex items-center">
+                        <i class="fas fa-expand text-primary mr-3"></i>
+                        Set page size to 3.5" x 2" landscape
+                    </li>
+                    <li class="flex items-center">
+                        <i class="fas fa-crop-alt text-primary mr-3"></i>
+                        Set margins to 0
+                    </li>
+                    <li class="flex items-center">
+                        <i class="fas fa-fill-drip text-primary mr-3"></i>
+                        Enable background graphics in print settings
+                    </li>
+                    <li class="flex items-center">
+                        <i class="fas fa-copy text-primary mr-3"></i>
+                        For double-sided printing: Print front first, then flip paper and print back
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Front of Business Card -->
+            <div class="preview-container">
+                <h3 class="text-xl font-bold text-primary mb-4 no-print">Front Side</h3>
+                <div class="card-container">
+                    <div class="business-card mx-auto shadow-2xl">
+                        <div class="card-content w-full h-full text-white p-4 pb-3 pr-3">
+                            <div class="flex justify-between items-start h-full">
+                                <!-- Left Side - Contact Information -->
+                                <div class="flex flex-col justify-between h-full w-4/5 pr-2">
+                                    <div>
+                                        <div class="mb-2">
+                                            <h1 class="text-2xl font-bold tracking-wide mb-0 leading-tight">Josh Brooks</h1>
+                                            <p class="text-lg font-medium text-desert leading-tight">Owner</p>
+                                        </div>
+                                        <div class="space-y-0.5">
+                                            <p class="flex items-center contact-text">
+                                                <span class="contact-icon"><i class="fas fa-mobile-alt"></i></span>
+                                                <span>Cell: 602-686-2669</span>
+                                            </p>
+                                            <p class="flex items-center contact-text">
+                                                <span class="contact-icon"><i class="fas fa-phone"></i></span>
+                                                <span>Office: 623-696-0890</span>
+                                            </p>
+                                            <p class="flex items-center contact-text">
+                                                <span class="contact-icon"><i class="fas fa-envelope"></i></span>
+                                                <span>Contact@ArizonaMedicalMarketing.com</span>
+                                            </p>
+                                            <p class="flex items-center contact-text">
+                                                <span class="contact-icon"><i class="fas fa-globe"></i></span>
+                                                <span>www.ArizonaMedicalMarketing.com</span>
+                                            </p>
+                                            <p class="flex items-start contact-text">
+                                                <span class="contact-icon mt-0.5"><i class="fas fa-location-dot"></i></span>
+                                                <span>4410 W Union Hills Dr, Suite 7-125<br>Glendale, AZ 85308</span>
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <!-- Right Side - Logo and QR -->
+                                <div class="flex flex-col items-end justify-between h-full w-1/5">
+                                    <div class="logo-qr-container">
+                                        <div class="logo-container">
+                                            <img src="logo.png" alt="Logo" class="w-full h-auto">
+                                        </div>
+                                        <div class="qr-container">
+                                            <canvas id="qr" style="background: transparent;"></canvas>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Back of Business Card -->
+            <div class="preview-container">
+                <h3 class="text-xl font-bold text-primary mb-4 no-print">Back Side</h3>
+                <div class="card-container back-card-container">
+                    <div class="business-card card-back mx-auto shadow-2xl">
+                        <div class="card-content w-full h-full"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <script>
+        window.onload = function() {
+            var canvas = document.getElementById('qr');
+            var qr = new QRious({
+                element: canvas,
+                value: 'https://arizonamedicalmarketing.com/',
+                size: 65,
+                level: 'H',
+                backgroundAlpha: 0,
+                foreground: '#000000'  /* Will be made white by CSS filter */
+            });
+        }
+
+        function printCard(cardId) {
+            // Add a class to hide all other cards
+            document.querySelectorAll('section[id^="card"]').forEach(section => {
+                if (section.id === cardId) {
+                    section.classList.add('print-only');
+                } else {
+                    section.classList.add('no-print');
+                }
+            });
+
+            // Print
+            window.print();
+
+            // Remove the classes after printing
+            document.querySelectorAll('section[id^="card"]').forEach(section => {
+                section.classList.remove('print-only');
+                section.classList.remove('no-print');
+            });
+        }
+    </script>
+</body>
+</html>
