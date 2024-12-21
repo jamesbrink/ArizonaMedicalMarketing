@@ -119,6 +119,8 @@
             width: 100%;
             z-index: 2;
             text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+            display: flex;
+            justify-content: space-between;
         }
         .logo-qr-container {
             display: flex;
@@ -126,37 +128,47 @@
             justify-content: flex-start;
             align-items: flex-end;
             height: 100%;
-            padding-top: 0.25rem;
+            padding: 0.25rem 0;
+            margin: 0;
+            gap: 0.5rem;
         }
         .logo-container {
             width: 100%;
+            margin-top: 0;
+            padding-right: 0.25rem;
         }
         .qr-container {
             background: transparent;
-            padding: 4px;
+            padding: 0;
             width: fit-content;
+            margin: 0;
             margin-top: auto;
-            padding-bottom: 0;
-            transform: translateY(10px);  /* Push QR code down slightly */
+            transform: none;
+            margin-right: 0.75rem;
+            padding-bottom: 0.5rem;
         }
         #qr {
             filter: brightness(0) invert(1);  /* Make QR code white */
-            width: 65px;
-            height: 65px;
+            width: 75px;
+            height: 75px;
+            margin-bottom: 0;
         }
         .contact-icon {
-            width: 16px;
+            width: 12px;
             display: inline-block;
             text-align: center;
-            margin-right: 6px;
+            margin-right: 5px;
             opacity: 0.9;
         }
         .contact-text {
-            font-size: 11px;
+            font-size: 9px;
             line-height: 1.4;
             letter-spacing: 0.02em;
             display: flex;
             align-items: center;
+        }
+        .contact-info {
+            padding-top: 0.25rem;
         }
     </style>
 </head>
@@ -210,13 +222,13 @@
                         <div class="card-content w-full h-full text-white p-4 pb-3 pr-3">
                             <div class="flex justify-between items-start h-full">
                                 <!-- Left Side - Contact Information -->
-                                <div class="flex flex-col justify-between h-full w-4/5 pr-2">
+                                <div class="flex flex-col justify-between h-full w-2/3 pr-4 contact-info">
                                     <div>
-                                        <div class="mb-2">
-                                            <h1 class="text-2xl font-bold tracking-wide mb-0 leading-tight">Josh Brooks</h1>
-                                            <p class="text-lg font-medium text-desert leading-tight">Owner</p>
+                                        <div class="mb-4">
+                                            <h1 class="text-sm font-bold tracking-wide mb-2 leading-tight">Josh Brooks</h1>
+                                            <p class="text-[10px] font-medium text-desert leading-tight">Owner</p>
                                         </div>
-                                        <div class="space-y-0.5">
+                                        <div class="space-y-1 mt-6">
                                             <p class="flex items-center contact-text">
                                                 <span class="contact-icon"><i class="fas fa-mobile-alt"></i></span>
                                                 <span>Cell: 602-686-2669</span>
@@ -242,7 +254,7 @@
                                 </div>
                                 
                                 <!-- Right Side - Logo and QR -->
-                                <div class="flex flex-col items-end justify-between h-full w-1/5">
+                                <div class="flex flex-col items-end justify-between h-full w-2/5">
                                     <div class="logo-qr-container">
                                         <div class="logo-container">
                                             <img src="logo.png" alt="Logo" class="w-full h-auto">
