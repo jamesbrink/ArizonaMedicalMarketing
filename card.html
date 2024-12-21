@@ -76,15 +76,44 @@
         .business-card {
             width: 3.5in;
             height: 2in;
-            transform: scale(2);
             transform-origin: top center;
             position: relative;
             border-radius: 0.125rem;
             overflow: hidden;
-            margin-bottom: 4in;
+            margin-bottom: 2rem;
         }
-        .preview-container {
-            margin-bottom: 6rem;
+
+        /* Responsive scaling for different screen sizes */
+        @media screen and (min-width: 768px) {
+            .business-card {
+                transform: scale(2);
+                margin-bottom: 4in;
+            }
+        }
+
+        @media screen and (max-width: 767px) {
+            .business-card {
+                transform: scale(1);
+                max-width: 100%;
+                height: auto;
+                aspect-ratio: 1.75;  /* maintains 3.5:2 ratio */
+            }
+            .preview-container {
+                margin-bottom: 2rem;
+            }
+            .contact-text {
+                font-size: clamp(8px, 2.5vw, 11px);
+            }
+            .card-content h1 {
+                font-size: clamp(14px, 4vw, 20px);
+            }
+            .qr-container {
+                transform: translateY(5px);
+            }
+            #qr {
+                width: clamp(45px, 15vw, 65px);
+                height: clamp(45px, 15vw, 65px);
+            }
         }
         .business-card::before {
             content: '';
