@@ -1,0 +1,238 @@
+<svg
+    width="800"
+    height="1739"
+    viewBox="0 0 800 1739"
+    xmlns="http://www.w3.org/2000/svg"
+    style="border:1px solid #ccc;"
+>
+    <!--
+    Wireframe for the Top Page (Flat, Not Angled)
+    Gradient header at the top
+    Circle image placeholder on the right
+    Large headline + button
+    Two-column layout for main content
+    Additional section below
+    Footer band at bottom
+  -->
+
+    <!-- Define a linear gradient for the top orange area -->
+    <defs>
+        <linearGradient id="headerGradient" x1="0" x2="1" y1="0" y2="0">
+            <stop offset="0%" stop-color="#FFB347" />
+            <stop offset="100%" stop-color="#8B0000" />
+        </linearGradient>
+        <clipPath id="circleClip">
+            <circle cx="650" cy="140" r="80" />
+        </clipPath>
+    </defs>
+
+    <!-- WHITE BACKGROUND -->
+    <rect x="0" y="0" width="800" height="1739" fill="#ffffff" />
+
+    <!-- TOP HEADER (Gradient) -->
+    <rect x="0" y="0" width="800" height="250" fill="url(#headerGradient)" />
+
+    <!-- Brand Text Placeholder (Top-Left) -->
+    <text
+        x="40"
+        y="100"
+        fill="#ffffff"
+        font-size="32"
+        font-family="Arial, sans-serif"
+        font-weight="bold"
+        letter-spacing="0.5"
+    >Arizona Medical Marketing</text>
+
+    <!-- Large Headline Placeholder -->
+    <text
+        x="40"
+        y="170"
+        fill="#ffffff"
+        font-size="42"
+        font-family="Arial, sans-serif"
+        font-weight="bold"
+        letter-spacing="1"
+    >Connecting Healthcare</text>
+
+    <!-- Circular Image Placeholder (Cactus Photo) on the Right -->
+    <circle cx="650" cy="140" r="80" fill="#000" opacity="0.1" />
+    <image x="560" y="60" width="200" height="160" href="cactus02.png" clip-path="url(#circleClip)"
+        preserveAspectRatio="xMidYMid slice" />
+
+    <!-- MAIN CONTENT AREA (Two Columns) -->
+    <!-- Left Column Container -->
+    <rect x="0" y="300" width="400" height="400" fill="#fff" rx="20" ry="20" />
+    <rect x="20" y="320" width="360" height="360" fill="#fafafa" rx="15" ry="15" />
+    <!-- Left Column Heading -->
+    <text
+        x="40"
+        y="360"
+        fill="#333333"
+        font-size="24"
+        font-weight="bold"
+        font-family="Arial, sans-serif"
+        letter-spacing="0.5"
+    >
+        What Makes Us Different?
+    </text>
+    <!-- Bullet points with icons -->
+    <text x="40" y="400" fill="#444444" font-size="16" font-family="Arial, sans-serif">• Affordable
+        Marketing That Works</text>
+    <text x="60" y="425" fill="#666666" font-size="14" font-family="Arial, sans-serif"
+        letter-spacing="0.2">Professional-grade marketing services at</text>
+    <text x="60" y="445" fill="#666666" font-size="14" font-family="Arial, sans-serif">a fraction of
+        in-house costs.</text>
+    <text x="60" y="465" fill="#666666" font-size="14" font-family="Arial, sans-serif">Customized
+        packages starting at $1,500/month.</text>
+
+    <text x="40" y="505" fill="#444444" font-size="16" font-family="Arial, sans-serif">• Strategic
+        and Targeted Outreach</text>
+    <text x="60" y="530" fill="#666666" font-size="14" font-family="Arial, sans-serif">We connect
+        you with key healthcare</text>
+    <text x="60" y="550" fill="#666666" font-size="14" font-family="Arial, sans-serif">providers in
+        your specialty area.</text>
+    <text x="60" y="570" fill="#666666" font-size="14" font-family="Arial, sans-serif">Data-driven
+        targeting for maximum impact.</text>
+    <text x="60" y="590" fill="#666666" font-size="14" font-family="Arial, sans-serif">Regular
+        performance analytics and updates.</text>
+
+    <text x="40" y="630" fill="#444444" font-size="16" font-family="Arial, sans-serif">• Building
+        Personal Connections</text>
+    <text x="60" y="655" fill="#666666" font-size="14" font-family="Arial, sans-serif">Face-to-face
+        networking that drives results.</text>
+    <text x="60" y="675" fill="#666666" font-size="14" font-family="Arial, sans-serif">Dedicated
+        relationship managers.</text>
+    <text x="60" y="695" fill="#666666" font-size="14" font-family="Arial, sans-serif">Regular
+        follow-ups and engagement tracking.</text>
+
+    <!-- Right Column Container -->
+    <rect x="400" y="300" width="400" height="400" fill="#fff" rx="20" ry="20" />
+    <rect x="420" y="320" width="360" height="360" fill="#ffffff" rx="15" ry="15" />
+    <!-- Right Column Heading -->
+    <text
+        x="440"
+        y="360"
+        fill="#333333"
+        font-size="24"
+        font-weight="bold"
+        font-family="Arial, sans-serif"
+        letter-spacing="0.5"
+    >
+        How We Can Help
+    </text>
+    <!-- Services with descriptions -->
+    <text x="440" y="400" fill="#444444" font-size="16" font-family="Arial, sans-serif">• Custom
+        Marketing Plans</text>
+    <text x="460" y="425" fill="#666666" font-size="14" font-family="Arial, sans-serif">Personalized
+        strategies designed for</text>
+    <text x="460" y="445" fill="#666666" font-size="14" font-family="Arial, sans-serif">your medical
+        practice.</text>
+    <text x="460" y="465" fill="#666666" font-size="14" font-family="Arial, sans-serif">Quarterly
+        strategy reviews and updates.</text>
+    <text x="460" y="485" fill="#666666" font-size="14" font-family="Arial, sans-serif">Competitive
+        market analysis included.</text>
+
+    <text x="440" y="525" fill="#444444" font-size="16" font-family="Arial, sans-serif">• Office
+        Visits That Count</text>
+    <text x="460" y="550" fill="#666666" font-size="14" font-family="Arial, sans-serif">Building
+        meaningful relationships with</text>
+    <text x="460" y="570" fill="#666666" font-size="14" font-family="Arial, sans-serif">primary care
+        physicians.</text>
+    <text x="460" y="590" fill="#666666" font-size="14" font-family="Arial, sans-serif">Scheduled
+        visits and follow-up meetings.</text>
+    <text x="460" y="610" fill="#666666" font-size="14" font-family="Arial, sans-serif">Educational
+        material distribution.</text>
+
+    <text x="440" y="650" fill="#444444" font-size="16" font-family="Arial, sans-serif">• Detailed
+        Monthly Reports</text>
+    <text x="460" y="675" fill="#666666" font-size="14" font-family="Arial, sans-serif">Track your
+        ROI with clear metrics.</text>
+    <text x="460" y="695" fill="#666666" font-size="14" font-family="Arial, sans-serif">Comprehensive
+        referral tracking system.</text>
+    <text x="460" y="715" fill="#666666" font-size="14" font-family="Arial, sans-serif">Visual data
+        presentations and insights.</text>
+
+    <!-- NEXT SECTION (Off‐white background with rounded corners) -->
+    <rect x="0" y="720" width="800" height="260" fill="#fef9f6" rx="20" ry="20" />
+    <!-- Contact Information with icons -->
+    <text
+        x="40"
+        y="770"
+        fill="#333333"
+        font-size="24"
+        font-weight="bold"
+        font-family="Arial, sans-serif"
+        letter-spacing="0.5"
+    >
+        Contact Us Today
+    </text>
+    <text x="40" y="810" fill="#444444" font-size="16" font-family="Arial, sans-serif">Arizona
+        Medical Marketing</text>
+    <text x="40" y="840" fill="#666666" font-size="16" font-family="Arial, sans-serif">623-696-0890</text>
+    <text x="40" y="870" fill="#666666" font-size="16" font-family="Arial, sans-serif">
+        Contact@ArizonaMedicalMarketing.com</text>
+
+    <!-- Right side content -->
+    <text
+        x="440"
+        y="770"
+        fill="#333333"
+        font-size="24"
+        font-weight="bold"
+        font-family="Arial, sans-serif"
+        letter-spacing="0.5"
+    >
+        Our Commitment
+    </text>
+    <text x="440" y="810" fill="#666666" font-size="16" font-family="Arial, sans-serif">We handle
+        your marketing so you can</text>
+    <text x="440" y="840" fill="#666666" font-size="16" font-family="Arial, sans-serif">focus on
+        what matters most - providing</text>
+    <text x="440" y="870" fill="#666666" font-size="16" font-family="Arial, sans-serif">exceptional
+        care to your patients.</text>
+
+    <!-- BOTTOM SECTION -->
+    <rect x="0" y="1000" width="800" height="639" fill="#fef9f6" rx="20" ry="20" />
+    <!-- Bottom Section Content -->
+    <text x="40" y="1040" fill="#333333" font-size="20" font-family="Arial, sans-serif"
+        font-weight="bold" letter-spacing="0.5">Arizona Medical Marketing</text>
+    <text x="40" y="1070" fill="#666666" font-size="16" font-family="Arial, sans-serif">Call Us:
+        623-696-0890</text>
+    <text x="40" y="1095" fill="#666666" font-size="16" font-family="Arial, sans-serif">Email:
+        Contact@ArizonaMedicalMarketing.com</text>
+    <text x="40" y="1120" fill="#666666" font-size="16" font-family="Arial, sans-serif">Serving
+        Phoenix Metropolitan Area</text>
+    <text x="40" y="1145" fill="#666666" font-size="16" font-family="Arial, sans-serif">Available
+        Monday - Friday, 8AM - 5PM MST</text>
+
+    <!-- Service Areas -->
+    <text x="40" y="1180" fill="#000000" font-size="16" font-family="Arial, sans-serif"
+        font-weight="bold">Service Areas:</text>
+    <text x="40" y="1205" fill="#666666" font-size="14" font-family="Arial, sans-serif">Phoenix •
+        Scottsdale • Mesa • Chandler • Gilbert</text>
+    <text x="40" y="1225" fill="#666666" font-size="14" font-family="Arial, sans-serif">Tempe •
+        Glendale • Peoria • Surprise • Sun City</text>
+
+    <!-- Right Side Bottom Content -->
+    <text x="440" y="1040" fill="#000000" font-size="18" font-family="Arial, sans-serif"
+        font-weight="bold">Why Choose Us?</text>
+    <text x="440" y="1070" fill="#666666" font-size="16" font-family="Arial, sans-serif">We handle
+        your marketing so you can</text>
+    <text x="440" y="1095" fill="#666666" font-size="16" font-family="Arial, sans-serif">focus on
+        what matters most - providing</text>
+    <text x="440" y="1120" fill="#666666" font-size="16" font-family="Arial, sans-serif">exceptional
+        care to your patients.</text>
+
+    <text x="440" y="1160" fill="#000000" font-size="16" font-family="Arial, sans-serif"
+        font-weight="bold">Our Commitment:</text>
+    <text x="440" y="1185" fill="#666666" font-size="14" font-family="Arial, sans-serif">• 100%
+        HIPAA Compliant Marketing</text>
+    <text x="440" y="1205" fill="#666666" font-size="14" font-family="Arial, sans-serif">• Dedicated
+        Account Manager</text>
+    <text x="440" y="1225" fill="#666666" font-size="14" font-family="Arial, sans-serif">•
+        Guaranteed Response Within 24 Hours</text>
+    <!-- Add centered logo -->
+    <image x="100" y="1350" width="600" height="240" href="logo.png" preserveAspectRatio="xMidYMid" />
+    <!-- FOOTER -->
+    <rect x="0" y="1639" width="800" height="100" fill="#0C2235" />
+</svg>

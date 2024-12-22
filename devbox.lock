@@ -1,9 +1,153 @@
 {
   "lockfile_version": "1",
   "packages": {
+    "corefonts@1": {
+      "last_modified": "2024-12-03T12:40:06Z",
+      "resolved": "github:NixOS/nixpkgs/566e53c2ad750c84f6d31f9ccb9d00f823165550#corefonts",
+      "source": "devbox-search",
+      "version": "1",
+      "systems": {
+        "aarch64-darwin": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/3nrnsw9r30c25ixhkbmkn1qzbb5lcx5d-corefonts-1",
+              "default": true
+            }
+          ],
+          "store_path": "/nix/store/3nrnsw9r30c25ixhkbmkn1qzbb5lcx5d-corefonts-1"
+        },
+        "aarch64-linux": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/hk109394mpbidhpkaz69s51lilf91bn4-corefonts-1",
+              "default": true
+            }
+          ],
+          "store_path": "/nix/store/hk109394mpbidhpkaz69s51lilf91bn4-corefonts-1"
+        },
+        "x86_64-darwin": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/hpl4yridq9py9d7c4i75lxn51ih5nn1p-corefonts-1",
+              "default": true
+            }
+          ],
+          "store_path": "/nix/store/hpl4yridq9py9d7c4i75lxn51ih5nn1p-corefonts-1"
+        },
+        "x86_64-linux": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/yav7clyx6kccbxyssc17z82qqv0gffrf-corefonts-1",
+              "default": true
+            }
+          ],
+          "store_path": "/nix/store/yav7clyx6kccbxyssc17z82qqv0gffrf-corefonts-1"
+        }
+      }
+    },
+    "fontconfig@2.14.2": {
+      "last_modified": "2024-01-24T16:15:02Z",
+      "resolved": "github:NixOS/nixpkgs/5cd2baa57a9ff2d84f2615700434fa04f3067fdb#fontconfig",
+      "source": "devbox-search",
+      "version": "2.14.2",
+      "systems": {
+        "aarch64-darwin": {
+          "outputs": [
+            {
+              "name": "bin",
+              "path": "/nix/store/6qsbhp69c79d0f4syjjd0lrdlwba38yw-fontconfig-2.14.2-bin",
+              "default": true
+            },
+            {
+              "name": "out",
+              "path": "/nix/store/09m06n32j1lnl32i6wlq50a74z687kq7-fontconfig-2.14.2"
+            },
+            {
+              "name": "dev",
+              "path": "/nix/store/hribx7kihjgd76bxlf3psl62rvbkilyf-fontconfig-2.14.2-dev"
+            },
+            {
+              "name": "lib",
+              "path": "/nix/store/nb83phjdja5x1lb3fmglnrkp3ab9n8iz-fontconfig-2.14.2-lib"
+            }
+          ],
+          "store_path": "/nix/store/6qsbhp69c79d0f4syjjd0lrdlwba38yw-fontconfig-2.14.2-bin"
+        },
+        "aarch64-linux": {
+          "outputs": [
+            {
+              "name": "bin",
+              "path": "/nix/store/2i4r1dqjvl4jc4p51l1gi3vfv9izdrn0-fontconfig-2.14.2-bin",
+              "default": true
+            },
+            {
+              "name": "dev",
+              "path": "/nix/store/yiv8kblw360ynmjv7w3kd5n0n7f6vv6f-fontconfig-2.14.2-dev"
+            },
+            {
+              "name": "lib",
+              "path": "/nix/store/b0blxa7kq9ph1a63f51y7879sgn75za7-fontconfig-2.14.2-lib"
+            },
+            {
+              "name": "out",
+              "path": "/nix/store/169vk8614a8r2vzkm75dc7a19x3v96yq-fontconfig-2.14.2"
+            }
+          ],
+          "store_path": "/nix/store/2i4r1dqjvl4jc4p51l1gi3vfv9izdrn0-fontconfig-2.14.2-bin"
+        },
+        "x86_64-darwin": {
+          "outputs": [
+            {
+              "name": "bin",
+              "path": "/nix/store/cnpbjkl2g4k13vkflgrqjzxjyb98c5qr-fontconfig-2.14.2-bin",
+              "default": true
+            },
+            {
+              "name": "dev",
+              "path": "/nix/store/alq9sxl01bmqwsshzyw7yc0s89mvgzk0-fontconfig-2.14.2-dev"
+            },
+            {
+              "name": "lib",
+              "path": "/nix/store/a08s8bwfbsh1i6cr04psrrgy2560h5ik-fontconfig-2.14.2-lib"
+            },
+            {
+              "name": "out",
+              "path": "/nix/store/hji2x2cgp7d34fn4hys0j1h5crv8d4d0-fontconfig-2.14.2"
+            }
+          ],
+          "store_path": "/nix/store/cnpbjkl2g4k13vkflgrqjzxjyb98c5qr-fontconfig-2.14.2-bin"
+        },
+        "x86_64-linux": {
+          "outputs": [
+            {
+              "name": "bin",
+              "path": "/nix/store/ddxp9k1rjcnf5pnhk17jjgrd3av32gxl-fontconfig-2.14.2-bin",
+              "default": true
+            },
+            {
+              "name": "dev",
+              "path": "/nix/store/ww1884bfr0s0anicjfs0dcrjv6hizm88-fontconfig-2.14.2-dev"
+            },
+            {
+              "name": "lib",
+              "path": "/nix/store/yqy79r40vsp53g9gri15ib0ljiqvhfaf-fontconfig-2.14.2-lib"
+            },
+            {
+              "name": "out",
+              "path": "/nix/store/idna40n8s9sfxif1ppm7kr4yx736q6bd-fontconfig-2.14.2"
+            }
+          ],
+          "store_path": "/nix/store/ddxp9k1rjcnf5pnhk17jjgrd3av32gxl-fontconfig-2.14.2-bin"
+        }
+      }
+    },
     "imagemagick@7.1.1-40": {
-      "last_modified": "2024-11-16T04:25:12Z",
-      "resolved": "github:NixOS/nixpkgs/34a626458d686f1b58139620a8b2793e9e123bba#imagemagick",
+      "last_modified": "2024-12-17T11:43:56Z",
+      "resolved": "github:NixOS/nixpkgs/4989a246d7a390a859852baddb1013f825435cee#imagemagick",
       "source": "devbox-search",
       "version": "7.1.1-40",
       "systems": {
@@ -11,80 +155,208 @@
           "outputs": [
             {
               "name": "out",
-              "path": "/nix/store/9bjcb5bv73wpimd59f4wkfpv2ykkygdf-imagemagick-7.1.1-40",
+              "path": "/nix/store/w321n1ginns9sy16gqp3h6sfjdczjng9-imagemagick-7.1.1-40",
               "default": true
             },
             {
               "name": "dev",
-              "path": "/nix/store/h2sa7brbdl1rj14fi9aqv4bjs8iyxjd2-imagemagick-7.1.1-40-dev"
+              "path": "/nix/store/jcag8x6q4gc6s1jsxcr7p065x2cr7agq-imagemagick-7.1.1-40-dev"
             },
             {
               "name": "doc",
-              "path": "/nix/store/j5ckhrp4xqgkiydy4kf62s33qb32xclz-imagemagick-7.1.1-40-doc"
+              "path": "/nix/store/6q4n90p470iwf0k1z5xpka75mdn13pxf-imagemagick-7.1.1-40-doc"
             }
           ],
-          "store_path": "/nix/store/9bjcb5bv73wpimd59f4wkfpv2ykkygdf-imagemagick-7.1.1-40"
+          "store_path": "/nix/store/w321n1ginns9sy16gqp3h6sfjdczjng9-imagemagick-7.1.1-40"
         },
         "aarch64-linux": {
           "outputs": [
             {
               "name": "out",
-              "path": "/nix/store/0w7kf0j5hclslzb52z4qfn8hn2rjlhn4-imagemagick-7.1.1-40",
+              "path": "/nix/store/0z72cabw37j3ljmhh87sinj1hmnhvkdm-imagemagick-7.1.1-40",
               "default": true
             },
             {
               "name": "dev",
-              "path": "/nix/store/0p0808k0m1xlhlmp5sp9m8977mj9n9j8-imagemagick-7.1.1-40-dev"
+              "path": "/nix/store/ix550f622fgclrw9h5afmv6817l84z02-imagemagick-7.1.1-40-dev"
             },
             {
               "name": "doc",
-              "path": "/nix/store/595c3bi6ingv0xkvphlql2yjq92nlw6v-imagemagick-7.1.1-40-doc"
+              "path": "/nix/store/lsjnhj4paibxr38dssz3pf5b0kd0p9d4-imagemagick-7.1.1-40-doc"
             }
           ],
-          "store_path": "/nix/store/0w7kf0j5hclslzb52z4qfn8hn2rjlhn4-imagemagick-7.1.1-40"
+          "store_path": "/nix/store/0z72cabw37j3ljmhh87sinj1hmnhvkdm-imagemagick-7.1.1-40"
         },
         "x86_64-darwin": {
           "outputs": [
             {
               "name": "out",
-              "path": "/nix/store/qm1dql1adnqmqcs1bkddclzf7kp1lbq9-imagemagick-7.1.1-40",
+              "path": "/nix/store/af97b3whhl3rp70jy17mrc13673bm3m4-imagemagick-7.1.1-40",
               "default": true
             },
             {
               "name": "dev",
-              "path": "/nix/store/2drj5im1kr81ww88nw2h4jvjgdjppiqy-imagemagick-7.1.1-40-dev"
+              "path": "/nix/store/l6g51r59vp5ccq87cjfxa4z7xjm2rnsa-imagemagick-7.1.1-40-dev"
             },
             {
               "name": "doc",
-              "path": "/nix/store/i08iqcdzzil953jbhiykv041w2xr5brw-imagemagick-7.1.1-40-doc"
+              "path": "/nix/store/v8bd3blhvdylzdmpa7z31kx95vyap87n-imagemagick-7.1.1-40-doc"
             }
           ],
-          "store_path": "/nix/store/qm1dql1adnqmqcs1bkddclzf7kp1lbq9-imagemagick-7.1.1-40"
+          "store_path": "/nix/store/af97b3whhl3rp70jy17mrc13673bm3m4-imagemagick-7.1.1-40"
         },
         "x86_64-linux": {
           "outputs": [
             {
               "name": "out",
-              "path": "/nix/store/ym0d0c1hpxinxvr2qrfg1d1b9wnz6i71-imagemagick-7.1.1-40",
+              "path": "/nix/store/fk45sni24m102vryyygk4pkrjvmaw02r-imagemagick-7.1.1-40",
               "default": true
             },
             {
               "name": "dev",
-              "path": "/nix/store/s5vd4n17gcy33jrvridvnqw6ijvmbac0-imagemagick-7.1.1-40-dev"
+              "path": "/nix/store/b89w00n2m8zaddmqgmlfs3x9r1q8qqls-imagemagick-7.1.1-40-dev"
             },
             {
               "name": "doc",
-              "path": "/nix/store/4ivgxlvw1fkn06s36gdi8xdwwdc0qr27-imagemagick-7.1.1-40-doc"
+              "path": "/nix/store/cpiadi4615j85migyxpd6prq1s08cfv6-imagemagick-7.1.1-40-doc"
             }
           ],
-          "store_path": "/nix/store/ym0d0c1hpxinxvr2qrfg1d1b9wnz6i71-imagemagick-7.1.1-40"
+          "store_path": "/nix/store/fk45sni24m102vryyygk4pkrjvmaw02r-imagemagick-7.1.1-40"
+        }
+      }
+    },
+    "inkscape@1.4": {
+      "last_modified": "2024-12-11T16:51:25Z",
+      "resolved": "github:NixOS/nixpkgs/5a48e3c2e435e95103d56590188cfed7b70e108c#inkscape",
+      "source": "devbox-search",
+      "version": "1.4",
+      "systems": {
+        "aarch64-darwin": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/f6ddk2xbfp2a21rr2s1zhq020m4lmfgy-inkscape-1.4",
+              "default": true
+            }
+          ],
+          "store_path": "/nix/store/f6ddk2xbfp2a21rr2s1zhq020m4lmfgy-inkscape-1.4"
+        },
+        "aarch64-linux": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/5d7amy31flqh37wyj49036xjrmxaslnv-inkscape-1.4",
+              "default": true
+            }
+          ],
+          "store_path": "/nix/store/5d7amy31flqh37wyj49036xjrmxaslnv-inkscape-1.4"
+        },
+        "x86_64-darwin": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/q883xb7k8cl4d6j03ycljgrhrm2264ir-inkscape-1.4",
+              "default": true
+            }
+          ],
+          "store_path": "/nix/store/q883xb7k8cl4d6j03ycljgrhrm2264ir-inkscape-1.4"
+        },
+        "x86_64-linux": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/mhcgqm93m86ffp84l3fpv19n8dskwx26-inkscape-1.4",
+              "default": true
+            }
+          ],
+          "store_path": "/nix/store/mhcgqm93m86ffp84l3fpv19n8dskwx26-inkscape-1.4"
+        }
+      }
+    },
+    "librsvg@2.57.1": {
+      "last_modified": "2024-03-28T11:17:37Z",
+      "resolved": "github:NixOS/nixpkgs/72c6ed328aa4e5d9151b1a512f6ad83aca7529fa#librsvg",
+      "source": "devbox-search",
+      "version": "2.57.1",
+      "systems": {
+        "aarch64-darwin": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/haw17sgvnhh7dyn37dy4r1ql5xskx7n3-librsvg-2.57.1",
+              "default": true
+            },
+            {
+              "name": "dev",
+              "path": "/nix/store/r2q9m5xw09ka7p7jp17pqsy2b3gwymng-librsvg-2.57.1-dev"
+            },
+            {
+              "name": "devdoc",
+              "path": "/nix/store/i8v08f9a7qk4vnsys0wqmic4q4gn2ls8-librsvg-2.57.1-devdoc"
+            }
+          ],
+          "store_path": "/nix/store/haw17sgvnhh7dyn37dy4r1ql5xskx7n3-librsvg-2.57.1"
+        },
+        "aarch64-linux": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/059drdlvazah89xz8bk7dhi6rky98dln-librsvg-2.57.1",
+              "default": true
+            },
+            {
+              "name": "dev",
+              "path": "/nix/store/lcq33fjs2bfcsznj97sfa0qg451gj2kr-librsvg-2.57.1-dev"
+            },
+            {
+              "name": "devdoc",
+              "path": "/nix/store/wcrjwjlba9i0d0n1757sg9hd1dpbyc89-librsvg-2.57.1-devdoc"
+            }
+          ],
+          "store_path": "/nix/store/059drdlvazah89xz8bk7dhi6rky98dln-librsvg-2.57.1"
+        },
+        "x86_64-darwin": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/zcbxr1sbyhn17d8qkh2y5l3dj207wvai-librsvg-2.57.1",
+              "default": true
+            },
+            {
+              "name": "dev",
+              "path": "/nix/store/5y7771aw3gr8zqdlfm69v9lz957gq0hv-librsvg-2.57.1-dev"
+            },
+            {
+              "name": "devdoc",
+              "path": "/nix/store/31hrnk1fxzzag3h034m4vqk47s4wqwcb-librsvg-2.57.1-devdoc"
+            }
+          ],
+          "store_path": "/nix/store/zcbxr1sbyhn17d8qkh2y5l3dj207wvai-librsvg-2.57.1"
+        },
+        "x86_64-linux": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/f2d8d2nnz2fhx7c8zwkmkq42dqk61ysm-librsvg-2.57.1",
+              "default": true
+            },
+            {
+              "name": "devdoc",
+              "path": "/nix/store/fa8c5b8agxfsvldxd9a3m8bgs570wy6d-librsvg-2.57.1-devdoc"
+            },
+            {
+              "name": "dev",
+              "path": "/nix/store/rp3spl5xxp9y8x6k9z4gb0fc70naa2l1-librsvg-2.57.1-dev"
+            }
+          ],
+          "store_path": "/nix/store/f2d8d2nnz2fhx7c8zwkmkq42dqk61ysm-librsvg-2.57.1"
         }
       }
     },
     "nodejs@23.2.0": {
-      "last_modified": "2024-11-22T01:27:12Z",
+      "last_modified": "2024-12-03T12:40:06Z",
       "plugin_version": "0.0.2",
-      "resolved": "github:NixOS/nixpkgs/8edf06bea5bcbee082df1b7369ff973b91618b8d#nodejs_23",
+      "resolved": "github:NixOS/nixpkgs/566e53c2ad750c84f6d31f9ccb9d00f823165550#nodejs_23",
       "source": "devbox-search",
       "version": "23.2.0",
       "systems": {
@@ -106,43 +378,43 @@
           "outputs": [
             {
               "name": "out",
-              "path": "/nix/store/p4845y5infyxnscwq5xwwisv684gy3rh-nodejs-23.2.0",
+              "path": "/nix/store/40pw9x1k6i27vzichpvj3s0303is3bdz-nodejs-23.2.0",
               "default": true
             },
             {
               "name": "libv8",
-              "path": "/nix/store/rvw0r6fbk8jr1gja8245ip31vkbjzdn8-nodejs-23.2.0-libv8"
+              "path": "/nix/store/wcgr1w3rs29rhh7rrnv462dx3ak2vpjl-nodejs-23.2.0-libv8"
             }
           ],
-          "store_path": "/nix/store/p4845y5infyxnscwq5xwwisv684gy3rh-nodejs-23.2.0"
+          "store_path": "/nix/store/40pw9x1k6i27vzichpvj3s0303is3bdz-nodejs-23.2.0"
         },
         "x86_64-darwin": {
           "outputs": [
             {
               "name": "out",
-              "path": "/nix/store/arw5b6s4sl9af7zcvpjs41qnl24xi80x-nodejs-23.2.0",
+              "path": "/nix/store/5ckvci4i16whdx5n1vxj14as01kwp1iz-nodejs-23.2.0",
               "default": true
             },
             {
               "name": "libv8",
-              "path": "/nix/store/fbyf3510n96ph7liws525zx617jkcvf0-nodejs-23.2.0-libv8"
+              "path": "/nix/store/13sfp639j9d69n1rjc0a9z3y7xxfwm23-nodejs-23.2.0-libv8"
             }
           ],
-          "store_path": "/nix/store/arw5b6s4sl9af7zcvpjs41qnl24xi80x-nodejs-23.2.0"
+          "store_path": "/nix/store/5ckvci4i16whdx5n1vxj14as01kwp1iz-nodejs-23.2.0"
         },
         "x86_64-linux": {
           "outputs": [
             {
               "name": "out",
-              "path": "/nix/store/nsc1zfr2q3z2dp0c3vlip7lhkjckafk8-nodejs-23.2.0",
+              "path": "/nix/store/aj86b5andix94xn08krg56wisfcy5cwy-nodejs-23.2.0",
               "default": true
             },
             {
               "name": "libv8",
-              "path": "/nix/store/v1j4ab0j2c8w3pk67p6lv8y19ika7rig-nodejs-23.2.0-libv8"
+              "path": "/nix/store/r0gb4789bp62hz6d0l28450w0nq05kfh-nodejs-23.2.0-libv8"
             }
           ],
-          "store_path": "/nix/store/nsc1zfr2q3z2dp0c3vlip7lhkjckafk8-nodejs-23.2.0"
+          "store_path": "/nix/store/aj86b5andix94xn08krg56wisfcy5cwy-nodejs-23.2.0"
         }
       }
     },
