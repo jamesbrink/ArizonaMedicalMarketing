@@ -15,7 +15,7 @@
         };
 
         # Helper scripts
-        install = pkgs.writeShellScriptBin "install" ''
+        setup = pkgs.writeShellScriptBin "setup" ''
           echo "Installing npm dependencies..."
           npm install
         '';
@@ -50,7 +50,7 @@
           echo ""
           echo "  Available commands:"
           echo ""
-          echo "    install      - Install npm dependencies"
+          echo "    setup        - Install npm dependencies"
           echo "    serve        - Start local dev server (port 3000)"
           echo "    convert-svg  - Convert SVG to PNG with DPI settings"
           echo "    menu         - Show this menu"
@@ -75,7 +75,7 @@
             fontconfig
             librsvg
             # Custom scripts
-            install
+            setup
             serve
             convert-svg
             menu
