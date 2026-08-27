@@ -670,6 +670,7 @@
     <script>
         const menuButton = document.querySelector('.menu-toggle');
         const mobileMenu = document.getElementById('mobile-menu');
+        const siteHeader = document.querySelector('.site-header');
 
         function setMenu(open) {
             mobileMenu.classList.toggle('open', open);
@@ -679,12 +680,18 @@
             document.body.classList.toggle('menu-open', open);
         }
 
-        menuButton.addEventListener('click', () => {
+        menuButton.addEventListener('click', (event) => {
+            event.stopPropagation();
             setMenu(menuButton.getAttribute('aria-expanded') !== 'true');
         });
 
         mobileMenu.querySelectorAll('a').forEach((link) => {
             link.addEventListener('click', () => setMenu(false));
+        });
+
+        document.addEventListener('click', (event) => {
+            const menuIsOpen = menuButton.getAttribute('aria-expanded') === 'true';
+            if (menuIsOpen && !siteHeader.contains(event.target)) setMenu(false);
         });
 
         document.addEventListener('keydown', (event) => {
