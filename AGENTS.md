@@ -16,9 +16,11 @@ nix develop
 # or allow the automatic environment once with: direnv allow
 ```
 
+The flake supports `aarch64-darwin`, `aarch64-linux`, and `x86_64-linux`.
+Current Nixpkgs no longer supports `x86_64-darwin`.
+
 Available helper commands:
 
-- `setup` installs npm dependencies.
 - `serve` starts the local site at `http://localhost:3000`.
 - `convert-svg <input.svg> [output.png] [dpi]` exports SVG artwork.
 - `menu` lists the development-shell tools.
@@ -30,6 +32,7 @@ outputs and must not be committed.
 ## Change guidelines
 
 - Keep the site static unless a task explicitly requires a new build system.
+- Do not add npm dependencies for tasks the Nix development shell already supports.
 - Preserve the custom domain in `CNAME` and the GitHub Pages deployment path.
 - Never expose or replace the Formspree endpoint without explicit approval.
 - Keep generated dependencies, Nix store artifacts, and `.direnv` out of Git.

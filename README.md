@@ -14,19 +14,21 @@ Live site: [www.arizonamedicalmarketing.com](https://www.arizonamedicalmarketing
 - `logo.png`, `favicon.*`, `cactus*.png`, `AZMM.png` — site and print assets
 - `.github/workflows/deploy.yml` — GitHub Pages deployment workflow
 
-The site uses HTML5, Tailwind CSS via CDN, Font Awesome via CDN, and a small
-Node.js HTTP server for local development. There is no JavaScript compilation
+The site uses HTML5, Tailwind CSS via CDN, Font Awesome via CDN, and QRious for
+the business-card QR code. There is no JavaScript compilation, npm dependency tree,
 or production bundle.
 
 ## Development with Nix
 
-The Nix flake is the supported development environment. It provides Node.js,
-npm, Inkscape, ImageMagick, librsvg, Microsoft core fonts, and the repository
-helper commands.
+The Nix flake is the supported development environment. It provides a static
+web server, Inkscape, ImageMagick, librsvg, Microsoft core fonts, and the
+repository helper commands.
+
+Supported Nix platforms are Apple Silicon macOS and ARM or x86_64 Linux. Current
+Nixpkgs no longer supports Intel macOS.
 
 ```bash
 direnv allow
-setup
 serve
 ```
 
@@ -34,7 +36,6 @@ Alternatively, enter the environment manually:
 
 ```bash
 nix develop
-setup
 serve
 ```
 
@@ -49,21 +50,20 @@ project.
 
 | Command | Purpose |
 | --- | --- |
-| `setup` | Install npm dependencies with `npm install` |
-| `serve` | Install missing dependencies and serve the site on port 3000 |
+| `serve` | Serve the static site on port 3000 |
 | `convert-svg <input.svg> [output.png] [dpi]` | Export an SVG to PNG; DPI defaults to 600 |
 | `menu` | Show the commands and tools provided by the Nix shell |
 
-### Development without Nix
+### Quick preview without Nix
 
-With Node.js and npm installed:
+With Python 3 installed:
 
 ```bash
-npm ci
-npm start
+python3 -m http.server 3000
 ```
 
-Image conversion additionally requires librsvg and ImageMagick.
+This only serves the site. Image conversion additionally requires librsvg and
+ImageMagick.
 
 ## Rack-card export
 

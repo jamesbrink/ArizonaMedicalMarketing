@@ -7,7 +7,11 @@
   };
 
   outputs = { self, nixpkgs, flake-utils }:
-    flake-utils.lib.eachDefaultSystem (system:
+    flake-utils.lib.eachSystem [
+      "aarch64-darwin"
+      "aarch64-linux"
+      "x86_64-linux"
+    ] (system:
       let
         pkgs = import nixpkgs {
           inherit system;
@@ -15,17 +19,14 @@
         };
 
         # Helper scripts
-        setup = pkgs.writeShellScriptBin "setup" ''
-          echo "Installing npm dependencies..."
-          npm install
-        '';
-
         serve = pkgs.writeShellScriptBin "serve" ''
-          if [ ! -d "node_modules" ]; then
-            echo "node_modules not found. Running npm install first..."
-            npm install
-          fi
-          npm start
+          echo "Serving Arizona Medical Marketing at http://localhost:3000"
+          exec ${pkgs.miniserve}/bin/miniserve \
+            --interfaces 127.0.0.1 \
+            --disable-indexing \
+            --index index.html \
+            --port 3000 \
+            .
         '';
 
         convert-svg = pkgs.writeShellScriptBin "convert-svg" ''
@@ -50,15 +51,12 @@
           echo ""
           echo "  Available commands:"
           echo ""
-          echo "    setup        - Install npm dependencies"
           echo "    serve        - Start local dev server (port 3000)"
           echo "    convert-svg  - Convert SVG to PNG with DPI settings"
           echo "    menu         - Show this menu"
           echo ""
           echo "  Tools available:"
           echo ""
-          echo "    node         - Node.js runtime"
-          echo "    npm          - Node package manager"
           echo "    inkscape     - Vector graphics editor"
           echo "    convert      - ImageMagick convert tool"
           echo "    rsvg-convert - SVG to raster converter"
@@ -68,14 +66,12 @@
       {
         devShells.default = pkgs.mkShell {
           buildInputs = with pkgs; [
-            nodejs
             imagemagick
             inkscape
             corefonts
             fontconfig
             librsvg
             # Custom scripts
-            setup
             serve
             convert-svg
             menu
