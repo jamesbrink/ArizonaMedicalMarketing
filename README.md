@@ -3,7 +3,7 @@
 Static marketing website for Arizona Medical Marketing, focused on connecting
 medical professionals with referral networks in Arizona.
 
-Live site: [www.arizonamedicalmarketing.com](https://www.arizonamedicalmarketing.com)
+Live site: [arizonamedicalmarketing.com](https://arizonamedicalmarketing.com)
 
 ## What is in this repository
 
@@ -13,6 +13,7 @@ Live site: [www.arizonamedicalmarketing.com](https://www.arizonamedicalmarketing
 - `rack_page1.png` — exported rack-card artwork
 - `logo.png`, `favicon.*`, `cactus*.png`, `AZMM.png` — site and print assets
 - `medical-office-lobby.webp`, `provider-networking-lunch.webp` — optimized homepage photography
+- `robots.txt`, `sitemap.xml` — search-crawler policy and canonical URL discovery
 - `.github/workflows/deploy.yml` — GitHub Pages deployment workflow
 
 The homepage uses HTML5, custom CSS, and Font Awesome via CDN. The business-card
@@ -81,6 +82,16 @@ For other SVG files, use the `convert-svg` helper supplied by the Nix shell.
 Pushes to `main` automatically deploy the repository's static files to GitHub
 Pages through `.github/workflows/deploy.yml`. The `CNAME` file configures the
 custom `www.arizonamedicalmarketing.com` domain.
+
+The public canonical URL is `https://arizonamedicalmarketing.com/`; the `www`
+hostname redirects there. The homepage includes matching canonical, Open Graph,
+Twitter Card, and `ProfessionalService` structured metadata.
+
+After a significant homepage deployment, submit
+`https://arizonamedicalmarketing.com/sitemap.xml` in Google Search Console and
+request indexing for the canonical homepage. Maintain the Google Business
+Profile as a service-area business unless the published address is staffed and
+open to customers.
 
 ## Project conventions
 

@@ -4,10 +4,60 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Arizona Medical Marketing builds physician referral networks through consistent, in-person outreach across the Greater Phoenix area.">
+    <meta name="robots" content="index, follow, max-image-preview:large">
+    <meta name="theme-color" content="#8b0000">
     <title>Physician Referral Marketing in Phoenix, AZ | Arizona Medical Marketing</title>
+    <link rel="canonical" href="https://arizonamedicalmarketing.com/">
     <link rel="icon" type="image/png" href="favicon.png">
     <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Arizona Medical Marketing">
+    <meta property="og:title" content="Physician Referral Marketing in Phoenix, AZ | Arizona Medical Marketing">
+    <meta property="og:description" content="Build a stronger physician referral network with consistent, in-person outreach across the Greater Phoenix area.">
+    <meta property="og:url" content="https://arizonamedicalmarketing.com/">
+    <meta property="og:image" content="https://arizonamedicalmarketing.com/medical-office-lobby.webp">
+    <meta property="og:image:width" content="1586">
+    <meta property="og:image:height" content="992">
+    <meta property="og:image:alt" content="A busy, welcoming medical office lobby with patients and staff">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Physician Referral Marketing in Phoenix, AZ | Arizona Medical Marketing">
+    <meta name="twitter:description" content="Build a stronger physician referral network with consistent, in-person outreach across the Greater Phoenix area.">
+    <meta name="twitter:image" content="https://arizonamedicalmarketing.com/medical-office-lobby.webp">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/css/all.min.css">
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "ProfessionalService",
+            "name": "Arizona Medical Marketing",
+            "url": "https://arizonamedicalmarketing.com/",
+            "logo": "https://arizonamedicalmarketing.com/logo.png",
+            "image": "https://arizonamedicalmarketing.com/medical-office-lobby.webp",
+            "description": "Physician referral marketing through consistent, in-person outreach across the Greater Phoenix area.",
+            "telephone": "+1-623-696-0890",
+            "email": "Contact@ArizonaMedicalMarketing.com",
+            "address": {
+                "@type": "PostalAddress",
+                "streetAddress": "4410 W Union Hills Dr, Suite 7-125",
+                "addressLocality": "Glendale",
+                "addressRegion": "AZ",
+                "postalCode": "85308",
+                "addressCountry": "US"
+            },
+            "areaServed": [
+                "Phoenix", "Scottsdale", "Tempe", "Mesa", "Chandler", "Gilbert",
+                "Glendale", "Peoria", "Surprise", "Avondale", "Goodyear", "Buckeye",
+                "Litchfield Park", "Fountain Hills", "Paradise Valley", "Queen Creek"
+            ],
+            "contactPoint": {
+                "@type": "ContactPoint",
+                "contactType": "sales",
+                "telephone": "+1-623-696-0890",
+                "email": "Contact@ArizonaMedicalMarketing.com",
+                "areaServed": "US-AZ",
+                "availableLanguage": "English"
+            }
+        }
+    </script>
     <style>
         :root {
             --maroon: #8b0000;
@@ -95,7 +145,10 @@
             backdrop-filter: blur(12px);
         }
         .nav-shell { display: flex; min-height: 82px; align-items: center; justify-content: space-between; gap: 32px; }
-        .brand img { width: 178px; height: 58px; object-fit: contain; object-position: left center; }
+        .brand { display: inline-flex; align-items: center; gap: 12px; color: var(--ink); text-decoration: none; }
+        .brand img { width: 54px; height: 54px; flex: 0 0 auto; object-fit: contain; }
+        .brand-name { font-family: Georgia, "Times New Roman", serif; font-size: 1.02rem; font-weight: 700; line-height: 1.08; letter-spacing: -0.015em; }
+        .brand-name strong { color: var(--maroon); font-weight: 700; }
         .desktop-nav { display: flex; align-items: center; gap: 32px; }
         .desktop-nav > a:not(.button) {
             color: #39414c;
@@ -123,8 +176,9 @@
         .mobile-menu a { padding: 12px 0; font-weight: 750; text-decoration: none; }
 
         .hero { overflow: hidden; padding: 82px 0 54px; background: var(--warm); }
-        .hero-grid { display: grid; grid-template-columns: minmax(0, 1.02fr) minmax(400px, 0.98fr); align-items: center; gap: 70px; }
-        .hero h1 { max-width: 700px; margin-bottom: 24px; font-size: clamp(3rem, 5.2vw, 5.4rem); }
+        .hero-grid { display: grid; grid-template-columns: minmax(0, 1.08fr) minmax(390px, 0.92fr); align-items: center; gap: 58px; }
+        .hero-brand-line { margin-bottom: 18px; color: var(--maroon); font-size: 0.76rem; font-weight: 850; letter-spacing: 0.15em; text-transform: uppercase; }
+        .hero h1 { max-width: 700px; margin-bottom: 24px; font-size: clamp(2.8rem, 4.1vw, 4.15rem); }
         .hero .lead { margin-bottom: 20px; color: #39414c; font-size: clamp(1.18rem, 2vw, 1.42rem); line-height: 1.52; }
         .hero .support { max-width: 690px; margin-bottom: 16px; color: var(--muted); font-size: 1.02rem; }
         .hero-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 18px; margin-top: 30px; }
@@ -224,6 +278,8 @@
         .contact-line i { margin-top: 5px; color: #ffc06e; }
         .contact-line a { font-weight: 750; text-decoration-thickness: 1px; text-underline-offset: 4px; }
         .contact-card { padding: 40px; border-radius: 8px; background: var(--white); color: var(--ink); box-shadow: 0 30px 70px rgba(60, 0, 0, 0.3); }
+        .contact-card h3 { margin-bottom: 10px; font-size: 1.85rem; }
+        .form-intro { margin-bottom: 28px; color: var(--muted); font-size: 0.95rem; }
         .form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
         .field { display: grid; gap: 8px; margin-bottom: 20px; }
         .field label { color: #3e4650; font-size: 0.9rem; font-weight: 800; }
@@ -236,6 +292,7 @@
             color: var(--ink);
         }
         .field input:focus, .field textarea:focus { border-color: var(--maroon); outline: 3px solid rgba(139, 0, 0, 0.12); }
+        .form-help { margin: -8px 0 20px; color: var(--muted); font-size: 0.82rem; }
         .contact-card .button { width: 100%; cursor: pointer; }
         .contact-note { margin: 18px 0 0; color: var(--muted); font-size: 0.86rem; text-align: center; }
         .quick-actions { display: grid; grid-template-columns: repeat(4, 1fr); border-bottom: 1px solid var(--line); background: var(--white); }
@@ -254,9 +311,10 @@
         .quick-actions a:hover { color: var(--maroon); }
         .quick-actions i { color: var(--gold); }
 
+        .mobile-action-bar { display: none; }
         .site-footer { padding: 52px 0; background: var(--white); }
         .footer-top { display: flex; align-items: center; justify-content: space-between; gap: 36px; margin-bottom: 28px; }
-        .footer-logo { width: 170px; height: 58px; object-fit: contain; object-position: left center; }
+        .footer-brand .brand-name { font-size: 1.08rem; }
         .footer-tagline { margin: 0; color: var(--maroon); font-family: Georgia, serif; font-size: 1.25rem; font-weight: 700; }
         .service-area { max-width: 900px; margin: 0 0 24px; color: var(--muted); font-size: 0.9rem; }
         .copyright { margin: 0; color: #626a73; font-size: 0.84rem; }
@@ -279,13 +337,17 @@
         }
 
         @media (max-width: 640px) {
+            body { padding-bottom: calc(64px + env(safe-area-inset-bottom)); }
             .container { width: min(100% - 32px, 1160px); }
             .section { padding: 76px 0; }
             .nav-shell { min-height: 72px; }
-            .brand img { width: 148px; height: 50px; }
+            .brand { gap: 9px; }
+            .brand img { width: 46px; height: 46px; }
+            .brand-name { font-size: 0.88rem; }
             .hero { padding: 56px 0 44px; }
             .hero-grid { grid-template-columns: 1fr; }
-            .hero h1 { font-size: clamp(2.75rem, 14vw, 4rem); }
+            .hero-brand-line { margin-bottom: 14px; font-size: 0.68rem; letter-spacing: 0.12em; }
+            .hero h1 { font-size: clamp(2.1rem, 9.3vw, 2.8rem); }
             .hero-actions { align-items: stretch; flex-direction: column; }
             .phone-link { text-align: center; }
             .hero-image { height: 370px; border-radius: 104px 6px 104px 6px; }
@@ -305,6 +367,30 @@
             .quick-actions a { min-height: 82px; border-bottom: 1px solid var(--line); }
             .quick-actions a:nth-child(2) { border-right: 0; }
             .quick-actions a:nth-child(n+3) { border-bottom: 0; }
+            .mobile-action-bar {
+                position: fixed;
+                right: 0;
+                bottom: 0;
+                left: 0;
+                z-index: 60;
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                padding-bottom: env(safe-area-inset-bottom);
+                border-top: 1px solid rgba(101, 4, 10, 0.2);
+                background: var(--white);
+                box-shadow: 0 -10px 28px rgba(45, 29, 20, 0.12);
+            }
+            .mobile-action-bar a {
+                display: flex;
+                min-height: 64px;
+                align-items: center;
+                justify-content: center;
+                gap: 9px;
+                color: var(--maroon);
+                font-weight: 850;
+                text-decoration: none;
+            }
+            .mobile-action-bar a:first-child { border-right: 1px solid var(--line); }
         }
 
         @media (prefers-reduced-motion: reduce) {
@@ -319,7 +405,8 @@
     <header class="site-header">
         <div class="container nav-shell">
             <a class="brand" href="#home" aria-label="Arizona Medical Marketing home">
-                <img src="logo.png" alt="Arizona Medical Marketing">
+                <img src="logo.png" alt="">
+                <span class="brand-name">Arizona Medical<br><strong>Marketing</strong></span>
             </a>
             <nav class="desktop-nav" aria-label="Primary navigation">
                 <a href="#home">Home</a>
@@ -347,7 +434,8 @@
         <section id="home" class="hero">
             <div class="container hero-grid">
                 <div>
-                    <h1>Welcome to Arizona Medical Marketing</h1>
+                    <p class="hero-brand-line">Welcome to Arizona Medical Marketing</p>
+                    <h1>Physician Referral Marketing for Greater Phoenix Practices</h1>
                     <p class="lead">Connecting medical professionals with the referral networks they need to grow their practices — across the Greater Phoenix area.</p>
                     <p class="support">Real, in-person outreach that builds trust with the people who send you patients, one office at a time.</p>
                     <p class="support">Ready to bring on that provider you've been considering? Or finally open that second location? More patients in the door mean more room to grow.</p>
@@ -530,6 +618,8 @@
                     </div>
                 </div>
                 <form class="contact-card" action="https://formspree.io/f/xpwzeprj" method="POST">
+                    <h3>Check Your Specialty and Territory</h3>
+                    <p class="form-intro">Include your specialty and city or ZIP in the message. We’ll confirm availability and contact you within one business day.</p>
                     <div class="form-grid">
                         <div class="field">
                             <label for="name">Name</label>
@@ -541,10 +631,10 @@
                         </div>
                     </div>
                     <div class="field">
-                        <label for="message">Message</label>
-                        <textarea id="message" name="message" rows="6" required></textarea>
+                        <label for="message">Specialty, territory, and message</label>
+                        <textarea id="message" name="message" rows="6" placeholder="Example: Cardiology practice in Scottsdale. We’d like to learn whether our territory is available." required></textarea>
                     </div>
-                    <button class="button" type="submit">Send Message <i class="fa-solid fa-paper-plane" aria-hidden="true"></i></button>
+                    <button class="button" type="submit">Check My Territory <i class="fa-solid fa-paper-plane" aria-hidden="true"></i></button>
                     <p class="contact-note">Your message goes directly to the Arizona Medical Marketing team.</p>
                 </form>
             </div>
@@ -561,13 +651,21 @@
     <footer class="site-footer">
         <div class="container">
             <div class="footer-top">
-                <img class="footer-logo" src="logo.png" alt="Arizona Medical Marketing">
+                <a class="brand footer-brand" href="#home" aria-label="Arizona Medical Marketing home">
+                    <img src="logo.png" alt="">
+                    <span class="brand-name">Arizona Medical<br><strong>Marketing</strong></span>
+                </a>
                 <p class="footer-tagline">Professional. Reliable. Results-Driven.</p>
             </div>
             <p class="service-area">Serving Phoenix, Scottsdale, Tempe, Mesa, Chandler, Gilbert, Glendale, Peoria, Surprise, Avondale, Goodyear, Buckeye, Litchfield Park, Fountain Hills, Paradise Valley, and Queen Creek.</p>
             <p class="copyright">&copy; 2026 Arizona Medical Marketing. All rights reserved.</p>
         </div>
     </footer>
+
+    <nav class="mobile-action-bar" aria-label="Quick mobile contact options">
+        <a href="tel:6236960890"><i class="fa-solid fa-phone" aria-hidden="true"></i> Call</a>
+        <a href="sms:6236960890"><i class="fa-solid fa-comment-dots" aria-hidden="true"></i> Text</a>
+    </nav>
 
     <script>
         const menuButton = document.querySelector('.menu-toggle');
