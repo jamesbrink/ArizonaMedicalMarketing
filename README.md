@@ -7,16 +7,17 @@ Live site: [www.arizonamedicalmarketing.com](https://www.arizonamedicalmarketing
 
 ## What is in this repository
 
-- `index.html` — primary responsive marketing page and Formspree contact form
+- `index.html` — primary responsive marketing page, FAQ, testimonials, and Formspree contact form
 - `card.html` — printable business-card layout with a generated QR code
 - `rack_page1.svg` — editable rack-card source artwork
 - `rack_page1.png` — exported rack-card artwork
 - `logo.png`, `favicon.*`, `cactus*.png`, `AZMM.png` — site and print assets
+- `medical-office-lobby.webp`, `provider-networking-lunch.webp` — optimized homepage photography
 - `.github/workflows/deploy.yml` — GitHub Pages deployment workflow
 
-The site uses HTML5, Tailwind CSS via CDN, Font Awesome via CDN, and QRious for
-the business-card QR code. There is no JavaScript compilation, npm dependency tree,
-or production bundle.
+The homepage uses HTML5, custom CSS, and Font Awesome via CDN. The business-card
+page uses Tailwind CSS via CDN and QRious for its QR code. There is no JavaScript
+compilation, npm dependency tree, or production bundle.
 
 ## Development with Nix
 

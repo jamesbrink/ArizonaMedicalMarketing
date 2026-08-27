@@ -3,244 +3,599 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Arizona Medical Marketing - Healthcare Practice Growth Specialists</title>
+    <meta name="description" content="Arizona Medical Marketing builds physician referral networks through consistent, in-person outreach across the Greater Phoenix area.">
+    <title>Physician Referral Marketing in Phoenix, AZ | Arizona Medical Marketing</title>
     <link rel="icon" type="image/png" href="favicon.png">
     <link rel="icon" type="image/x-icon" href="favicon.ico">
-    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4.3.3"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/css/all.min.css">
-    <style type="text/tailwindcss">
-        @theme {
-            --color-primary: #8B0000;
-            --color-secondary: #FFA500;
-            --color-desert: #FFB347;
+    <style>
+        :root {
+            --maroon: #8b0000;
+            --maroon-dark: #65040a;
+            --gold: #d97b16;
+            --gold-light: #fff4e5;
+            --ink: #17202c;
+            --muted: #5f6873;
+            --line: #e6ded4;
+            --warm: #fbf8f4;
+            --white: #ffffff;
+            --shadow: 0 22px 60px rgba(45, 29, 20, 0.12);
         }
 
-        @layer utilities {
-            .text-shadow {
-                text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-            }
+        * { box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body {
+            margin: 0;
+            color: var(--ink);
+            background: var(--white);
+            font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+            line-height: 1.65;
+        }
+        body.menu-open { overflow: hidden; }
+        img { display: block; max-width: 100%; height: auto; }
+        a { color: inherit; }
+        button, input, textarea { font: inherit; }
+        h1, h2, h3, p { margin-top: 0; }
+        h1, h2, h3 {
+            font-family: Georgia, "Times New Roman", serif;
+            line-height: 1.08;
+            letter-spacing: -0.025em;
+        }
+        section { scroll-margin-top: 88px; }
+        .container { width: min(1160px, calc(100% - 40px)); margin-inline: auto; }
+        .section { padding: 104px 0; }
+        .section-label {
+            margin-bottom: 16px;
+            color: var(--maroon);
+            font-size: 0.75rem;
+            font-weight: 800;
+            letter-spacing: 0.16em;
+            text-transform: uppercase;
+        }
+        .section-title { margin-bottom: 20px; font-size: clamp(2.2rem, 4vw, 3.6rem); }
+        .section-intro { max-width: 760px; color: var(--muted); font-size: 1.08rem; }
+        .button {
+            display: inline-flex;
+            min-height: 50px;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            padding: 12px 22px;
+            border: 1px solid transparent;
+            border-radius: 4px;
+            background: var(--maroon);
+            color: var(--white);
+            font-weight: 800;
+            text-decoration: none;
+            transition: background 160ms ease, border-color 160ms ease, transform 160ms ease;
+        }
+        .button:hover { background: var(--maroon-dark); transform: translateY(-1px); }
+        .button:focus-visible, a:focus-visible, button:focus-visible, summary:focus-visible, input:focus-visible, textarea:focus-visible {
+            outline: 3px solid #f3ad59;
+            outline-offset: 3px;
+        }
+        .skip-link {
+            position: fixed;
+            top: 8px;
+            left: 8px;
+            z-index: 100;
+            transform: translateY(-150%);
+            padding: 10px 14px;
+            background: var(--ink);
+            color: var(--white);
+        }
+        .skip-link:focus { transform: translateY(0); }
+
+        .site-header {
+            position: sticky;
+            top: 0;
+            z-index: 50;
+            border-bottom: 1px solid rgba(230, 222, 212, 0.86);
+            background: rgba(255, 255, 255, 0.96);
+            backdrop-filter: blur(12px);
+        }
+        .nav-shell { display: flex; min-height: 82px; align-items: center; justify-content: space-between; gap: 32px; }
+        .brand img { width: 178px; height: 58px; object-fit: contain; object-position: left center; }
+        .desktop-nav { display: flex; align-items: center; gap: 32px; }
+        .desktop-nav > a:not(.button) {
+            color: #39414c;
+            font-size: 0.95rem;
+            font-weight: 700;
+            text-decoration: none;
+        }
+        .desktop-nav > a:not(.button):hover { color: var(--maroon); }
+        .nav-button { min-height: 44px; padding: 9px 18px; }
+        .menu-toggle {
+            display: none;
+            width: 44px;
+            height: 44px;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid var(--line);
+            border-radius: 4px;
+            background: var(--white);
+            color: var(--ink);
+            cursor: pointer;
+        }
+        .mobile-menu { display: none; border-top: 1px solid var(--line); background: var(--white); }
+        .mobile-menu.open { display: block; }
+        .mobile-menu nav { display: grid; padding: 10px 0 22px; }
+        .mobile-menu a { padding: 12px 0; font-weight: 750; text-decoration: none; }
+
+        .hero { overflow: hidden; padding: 82px 0 54px; background: var(--warm); }
+        .hero-grid { display: grid; grid-template-columns: minmax(0, 1.02fr) minmax(400px, 0.98fr); align-items: center; gap: 70px; }
+        .hero h1 { max-width: 700px; margin-bottom: 24px; font-size: clamp(3rem, 5.2vw, 5.4rem); }
+        .hero .lead { margin-bottom: 20px; color: #39414c; font-size: clamp(1.18rem, 2vw, 1.42rem); line-height: 1.52; }
+        .hero .support { max-width: 690px; margin-bottom: 16px; color: var(--muted); font-size: 1.02rem; }
+        .hero-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 18px; margin-top: 30px; }
+        .phone-link { color: var(--maroon); font-weight: 800; text-decoration-thickness: 1px; text-underline-offset: 4px; }
+        .hero-image-wrap { position: relative; isolation: isolate; }
+        .hero-image-wrap::before {
+            position: absolute;
+            right: -34px;
+            bottom: -28px;
+            z-index: -1;
+            width: 72%;
+            height: 70%;
+            border-radius: 120px 0 0 0;
+            background: var(--gold);
+            content: "";
+        }
+        .hero-image {
+            width: 100%;
+            height: 560px;
+            border-radius: 180px 8px 180px 8px;
+            box-shadow: var(--shadow);
+            object-fit: cover;
+        }
+        .territory-strip { padding: 20px 0; border-block: 1px solid var(--line); background: var(--white); }
+        .territory-content { display: flex; align-items: center; justify-content: space-between; gap: 28px; }
+        .territory-cities { display: flex; flex-wrap: wrap; gap: 8px 20px; color: #37404a; font-size: 0.9rem; font-weight: 700; }
+        .territory-note { margin: 0; color: var(--maroon); font-size: 0.86rem; font-weight: 800; white-space: nowrap; }
+
+        .difference-header { display: grid; grid-template-columns: 0.85fr 1.15fr; gap: 80px; align-items: end; margin-bottom: 62px; }
+        .difference-header .section-title, .difference-header .section-intro { margin-bottom: 0; }
+        .difference-grid { display: grid; grid-template-columns: repeat(4, 1fr); border-top: 1px solid var(--line); }
+        .difference-item { min-height: 292px; padding: 36px 26px 20px 0; border-right: 1px solid var(--line); }
+        .difference-item:not(:first-child) { padding-left: 26px; }
+        .difference-item:last-child { border-right: 0; }
+        .number { display: block; margin-bottom: 54px; color: #98500b; font-family: Georgia, serif; font-size: 1.05rem; font-weight: 700; }
+        .difference-item h3 { margin-bottom: 14px; font-size: 1.45rem; }
+        .difference-item p { margin-bottom: 0; color: var(--muted); font-size: 0.95rem; }
+
+        .services { background: var(--warm); }
+        .services-header { display: flex; align-items: end; justify-content: space-between; gap: 48px; margin-bottom: 62px; }
+        .services-header .section-title { margin-bottom: 0; }
+        .services-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 52px 44px; }
+        .service-icon { display: grid; width: 48px; height: 48px; margin-bottom: 24px; place-items: center; color: var(--gold); font-size: 1.6rem; }
+        .service h3 { margin-bottom: 12px; font-size: 1.4rem; }
+        .service p { margin-bottom: 0; color: var(--muted); }
+
+        .photo-band { position: relative; min-height: 610px; overflow: hidden; }
+        .photo-band img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center 46%; }
+        .photo-caption {
+            position: absolute;
+            right: 6vw;
+            bottom: 42px;
+            max-width: 455px;
+            padding: 28px 32px;
+            background: rgba(255, 255, 255, 0.94);
+            box-shadow: var(--shadow);
+        }
+        .photo-caption p { margin: 0; color: var(--muted); }
+        .photo-caption strong { display: block; margin-bottom: 5px; color: var(--maroon); font-family: Georgia, serif; font-size: 1.25rem; }
+
+        .testimonials { background: var(--white); }
+        .testimonials-header { max-width: 670px; margin-bottom: 54px; }
+        .quotes { display: grid; grid-template-columns: repeat(3, 1fr); border-top: 1px solid var(--line); }
+        blockquote { margin: 0; padding: 38px 32px 16px 0; color: #3e4650; font-family: Georgia, serif; font-size: 1.17rem; line-height: 1.7; }
+        blockquote:not(:first-child) { padding-left: 32px; border-left: 1px solid var(--line); }
+        blockquote::before { display: block; margin-bottom: 14px; color: var(--gold); content: "“"; font-size: 3.6rem; line-height: 0.8; }
+
+        .faq { background: var(--warm); }
+        .faq-layout { display: grid; grid-template-columns: 0.7fr 1.3fr; gap: 86px; align-items: start; }
+        .faq-list { border-top: 1px solid var(--line); }
+        details { border-bottom: 1px solid var(--line); }
+        summary {
+            display: flex;
+            min-height: 84px;
+            align-items: center;
+            justify-content: space-between;
+            gap: 24px;
+            cursor: pointer;
+            color: var(--ink);
+            font-family: Georgia, serif;
+            font-size: 1.22rem;
+            font-weight: 700;
+            list-style: none;
+        }
+        summary::-webkit-details-marker { display: none; }
+        summary::after { color: var(--maroon); content: "+"; font-family: ui-sans-serif, system-ui; font-size: 1.8rem; font-weight: 300; }
+        details[open] summary::after { content: "−"; }
+        details p { max-width: 680px; margin: -4px 48px 28px 0; color: var(--muted); }
+
+        .contact { background: var(--maroon); color: var(--white); }
+        .contact .section-label { color: #ffc06e; }
+        .contact-layout { display: grid; grid-template-columns: 0.86fr 1.14fr; gap: 82px; align-items: start; }
+        .contact h2 { color: var(--white); }
+        .contact-copy > p { color: #f4dede; font-size: 1.08rem; }
+        .contact-list { display: grid; gap: 19px; margin-top: 36px; }
+        .contact-line { display: grid; grid-template-columns: 28px 1fr; align-items: start; gap: 12px; }
+        .contact-line i { margin-top: 5px; color: #ffc06e; }
+        .contact-line a { font-weight: 750; text-decoration-thickness: 1px; text-underline-offset: 4px; }
+        .contact-card { padding: 40px; border-radius: 8px; background: var(--white); color: var(--ink); box-shadow: 0 30px 70px rgba(60, 0, 0, 0.3); }
+        .form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+        .field { display: grid; gap: 8px; margin-bottom: 20px; }
+        .field label { color: #3e4650; font-size: 0.9rem; font-weight: 800; }
+        .field input, .field textarea {
+            width: 100%;
+            border: 1px solid #d8d3cc;
+            border-radius: 4px;
+            background: #fff;
+            padding: 13px 14px;
+            color: var(--ink);
+        }
+        .field input:focus, .field textarea:focus { border-color: var(--maroon); outline: 3px solid rgba(139, 0, 0, 0.12); }
+        .contact-card .button { width: 100%; cursor: pointer; }
+        .contact-note { margin: 18px 0 0; color: var(--muted); font-size: 0.86rem; text-align: center; }
+        .quick-actions { display: grid; grid-template-columns: repeat(4, 1fr); border-bottom: 1px solid var(--line); background: var(--white); }
+        .quick-actions a {
+            display: flex;
+            min-height: 108px;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            border-right: 1px solid var(--line);
+            color: var(--ink);
+            font-weight: 800;
+            text-decoration: none;
+        }
+        .quick-actions a:last-child { border-right: 0; }
+        .quick-actions a:hover { color: var(--maroon); }
+        .quick-actions i { color: var(--gold); }
+
+        .site-footer { padding: 52px 0; background: var(--white); }
+        .footer-top { display: flex; align-items: center; justify-content: space-between; gap: 36px; margin-bottom: 28px; }
+        .footer-logo { width: 170px; height: 58px; object-fit: contain; object-position: left center; }
+        .footer-tagline { margin: 0; color: var(--maroon); font-family: Georgia, serif; font-size: 1.25rem; font-weight: 700; }
+        .service-area { max-width: 900px; margin: 0 0 24px; color: var(--muted); font-size: 0.9rem; }
+        .copyright { margin: 0; color: #626a73; font-size: 0.84rem; }
+
+        @media (max-width: 960px) {
+            .desktop-nav { display: none; }
+            .menu-toggle { display: inline-flex; }
+            .hero-grid, .difference-header, .faq-layout, .contact-layout { grid-template-columns: 1fr; }
+            .hero-grid { gap: 50px; }
+            .hero-image { height: 500px; }
+            .difference-header, .faq-layout, .contact-layout { gap: 38px; }
+            .difference-grid { grid-template-columns: 1fr 1fr; }
+            .difference-item:nth-child(2) { border-right: 0; }
+            .difference-item:nth-child(n+3) { border-top: 1px solid var(--line); }
+            .services-grid { grid-template-columns: 1fr 1fr; }
+            .quotes { grid-template-columns: 1fr; }
+            blockquote { padding: 34px 0; border-bottom: 1px solid var(--line); }
+            blockquote:not(:first-child) { padding-left: 0; border-left: 0; }
+            blockquote:last-child { border-bottom: 0; }
+        }
+
+        @media (max-width: 640px) {
+            .container { width: min(100% - 32px, 1160px); }
+            .section { padding: 76px 0; }
+            .nav-shell { min-height: 72px; }
+            .brand img { width: 148px; height: 50px; }
+            .hero { padding: 56px 0 44px; }
+            .hero-grid { grid-template-columns: 1fr; }
+            .hero h1 { font-size: clamp(2.75rem, 14vw, 4rem); }
+            .hero-actions { align-items: stretch; flex-direction: column; }
+            .phone-link { text-align: center; }
+            .hero-image { height: 370px; border-radius: 104px 6px 104px 6px; }
+            .hero-image-wrap::before { right: -16px; bottom: -16px; }
+            .territory-content, .services-header, .footer-top { align-items: flex-start; flex-direction: column; }
+            .territory-note { white-space: normal; }
+            .difference-grid, .services-grid, .form-grid { grid-template-columns: 1fr; }
+            .difference-item, .difference-item:not(:first-child) { min-height: 0; padding: 30px 0; border-right: 0; border-top: 1px solid var(--line); }
+            .difference-item:first-child { border-top: 0; }
+            .number { margin-bottom: 22px; }
+            .photo-band { min-height: 520px; }
+            .photo-caption { right: 16px; bottom: 18px; left: 16px; padding: 22px; }
+            .faq-layout { gap: 20px; }
+            summary { min-height: 76px; font-size: 1.08rem; }
+            .contact-card { padding: 26px 20px; }
+            .quick-actions { grid-template-columns: 1fr 1fr; }
+            .quick-actions a { min-height: 82px; border-bottom: 1px solid var(--line); }
+            .quick-actions a:nth-child(2) { border-right: 0; }
+            .quick-actions a:nth-child(n+3) { border-bottom: 0; }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            html { scroll-behavior: auto; }
+            *, *::before, *::after { scroll-behavior: auto !important; transition: none !important; }
         }
     </style>
 </head>
-<body class="bg-gray-50">
-    <!-- Navigation -->
-    <nav class="fixed w-full bg-white shadow-md z-50">
-        <div class="container mx-auto px-6 py-3">
-            <div class="flex items-center justify-between">
-                <div class="flex items-center">
-                    <img src="logo.png" alt="Arizona Medical Marketing" class="h-14 w-auto object-contain">
-                </div>
-                <div class="hidden md:flex items-center space-x-8">
-                    <a href="#home" class="text-gray-700 hover:text-primary transition">Home</a>
-                    <a href="#about" class="text-gray-700 hover:text-primary transition">About</a>
-                    <a href="#services" class="text-gray-700 hover:text-primary transition">Services</a>
-                    <a href="#contact" class="bg-primary text-white px-6 py-2 rounded-full hover:bg-red-800 transition">Contact Us</a>
-                </div>
-                <button class="md:hidden text-gray-700" onclick="toggleMenu()">
-                    <i class="fas fa-bars text-2xl"></i>
-                </button>
-            </div>
-        </div>
-        <!-- Mobile Menu -->
-        <div id="mobile-menu" class="hidden md:hidden bg-white">
-            <div class="px-4 py-3 space-y-4">
-                <a href="#home" class="block text-gray-700">Home</a>
-                <a href="#about" class="block text-gray-700">About</a>
-                <a href="#services" class="block text-gray-700">Services</a>
-                <a href="#contact" class="block text-primary font-bold">Contact Us</a>
-            </div>
-        </div>
-    </nav>
+<body>
+    <a class="skip-link" href="#main-content">Skip to main content</a>
 
-    <!-- Hero Section -->
-    <section id="home" class="pt-24 pb-12 md:pt-32 md:pb-24 bg-gradient-to-br from-desert to-primary">
-        <div class="container mx-auto px-6">
-            <div class="flex flex-col md:flex-row items-center">
-                <div class="md:w-1/2 text-center md:text-left">
-                    <h1 class="text-4xl md:text-6xl font-bold text-white mb-6 text-shadow">
-                        Welcome to Arizona Medical Marketing
-                    </h1>
-                    <p class="text-xl text-white mb-8">
-                        Connecting medical professionals with the referral networks they need to grow their practices.
-                    </p>
-                    <a href="#contact" class="inline-block bg-white text-primary px-8 py-3 rounded-full text-lg font-semibold hover:bg-gray-100 transition">
-                        Get Started
-                    </a>
+    <header class="site-header">
+        <div class="container nav-shell">
+            <a class="brand" href="#home" aria-label="Arizona Medical Marketing home">
+                <img src="logo.png" alt="Arizona Medical Marketing">
+            </a>
+            <nav class="desktop-nav" aria-label="Primary navigation">
+                <a href="#home">Home</a>
+                <a href="#different">About</a>
+                <a href="#help">Services</a>
+                <a href="#faq">FAQ</a>
+                <a class="button nav-button" href="#contact">Contact Us</a>
+            </nav>
+            <button class="menu-toggle" type="button" aria-controls="mobile-menu" aria-expanded="false" aria-label="Open navigation menu">
+                <i class="fa-solid fa-bars" aria-hidden="true"></i>
+            </button>
+        </div>
+        <div id="mobile-menu" class="mobile-menu">
+            <nav class="container" aria-label="Mobile navigation">
+                <a href="#home">Home</a>
+                <a href="#different">About</a>
+                <a href="#help">Services</a>
+                <a href="#faq">FAQ</a>
+                <a href="#contact">Contact Us</a>
+            </nav>
+        </div>
+    </header>
+
+    <main id="main-content">
+        <section id="home" class="hero">
+            <div class="container hero-grid">
+                <div>
+                    <h1>Welcome to Arizona Medical Marketing</h1>
+                    <p class="lead">Connecting medical professionals with the referral networks they need to grow their practices — across the Greater Phoenix area.</p>
+                    <p class="support">Real, in-person outreach that builds trust with the people who send you patients, one office at a time.</p>
+                    <p class="support">Ready to bring on that provider you've been considering? Or finally open that second location? More patients in the door mean more room to grow.</p>
+                    <div class="hero-actions">
+                        <a class="button" href="#contact">Check My Territory <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
+                        <a class="phone-link" href="tel:6236960890">Or call now: 623-696-0890</a>
+                    </div>
                 </div>
-                <div class="md:w-1/2 mt-12 md:mt-0">
-                    <img src="logo.png" alt="Arizona Medical Marketing" class="w-full max-w-md mx-auto h-auto object-contain" style="aspect-ratio: 448/422;">
+                <div class="hero-image-wrap">
+                    <img class="hero-image" src="medical-office-lobby.webp" width="1586" height="992" alt="A busy, welcoming medical office lobby with patients and staff" fetchpriority="high">
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- What Makes Us Different -->
-    <section id="about" class="py-16 bg-white">
-        <div class="container mx-auto px-6">
-            <h2 class="text-3xl md:text-4xl font-bold text-center mb-12">What Makes Us Different?</h2>
-            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-                <div class="bg-gray-50 p-6 rounded-lg shadow-lg hover:shadow-xl transition">
-                    <div class="text-primary text-3xl mb-4">
-                        <i class="fas fa-dollar-sign"></i>
-                    </div>
-                    <h3 class="text-xl font-semibold mb-4">Affordable Marketing That Works</h3>
-                    <p class="text-gray-600">
-                        Professional-grade marketing services at a fraction of the cost of running an in-house team.
-                    </p>
+        <div class="territory-strip" aria-label="Service area highlights">
+            <div class="container territory-content">
+                <div class="territory-cities" aria-label="Cities served">
+                    <span>Glendale</span><span>Peoria</span><span>Phoenix</span><span>Scottsdale</span><span>Tempe</span><span>Mesa</span><span>Chandler</span>
                 </div>
-                <div class="bg-gray-50 p-6 rounded-lg shadow-lg hover:shadow-xl transition">
-                    <div class="text-primary text-3xl mb-4">
-                        <i class="fas fa-bullseye"></i>
-                    </div>
-                    <h3 class="text-xl font-semibold mb-4">Strategic and Targeted Outreach</h3>
-                    <p class="text-gray-600">
-                        We identify key healthcare providers most likely to benefit from your services.
-                    </p>
-                </div>
-                <div class="bg-gray-50 p-6 rounded-lg shadow-lg hover:shadow-xl transition">
-                    <div class="text-primary text-3xl mb-4">
-                        <i class="fas fa-tasks"></i>
-                    </div>
-                    <h3 class="text-xl font-semibold mb-4">Streamlined Efficiency</h3>
-                    <p class="text-gray-600">
-                        Focus on patient care while we handle your marketing and outreach needs.
-                    </p>
-                </div>
-                <div class="bg-gray-50 p-6 rounded-lg shadow-lg hover:shadow-xl transition">
-                    <div class="text-primary text-3xl mb-4">
-                        <i class="fas fa-handshake"></i>
-                    </div>
-                    <h3 class="text-xl font-semibold mb-4">Building Personal Connections</h3>
-                    <p class="text-gray-600">
-                        Creating meaningful, face-to-face connections that lead to lasting partnerships.
-                    </p>
-                </div>
+                <p class="territory-note">Consistent office visits, every week, across the Valley</p>
             </div>
         </div>
-    </section>
 
-    <!-- Services Section -->
-    <section id="services" class="py-16 bg-gray-50">
-        <div class="container mx-auto px-6">
-            <h2 class="text-3xl md:text-4xl font-bold text-center mb-12">How We Can Help</h2>
-            <div class="grid md:grid-cols-3 gap-8">
-                <div class="bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition">
-                    <div class="text-primary text-3xl mb-4">
-                        <i class="fas fa-chart-line"></i>
-                    </div>
-                    <h3 class="text-xl font-semibold mb-4">Custom Marketing Plans</h3>
-                    <p class="text-gray-600">
-                        Tailored strategies aligned with your practice's unique goals and specialties.
-                    </p>
-                </div>
-                <div class="bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition">
-                    <div class="text-primary text-3xl mb-4">
-                        <i class="fas fa-hospital-user"></i>
-                    </div>
-                    <h3 class="text-xl font-semibold mb-4">Office Visits That Count</h3>
-                    <p class="text-gray-600">
-                        Personalized visits to healthcare providers to build strong, lasting relationships.
-                    </p>
-                </div>
-                <div class="bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition">
-                    <div class="text-primary text-3xl mb-4">
-                        <i class="fas fa-chart-bar"></i>
-                    </div>
-                    <h3 class="text-xl font-semibold mb-4">Detailed Reporting</h3>
-                    <p class="text-gray-600">
-                        Clear and actionable monthly progress reports to track your success.
-                    </p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section id="contact" class="py-16 bg-primary">
-        <div class="container mx-auto px-6">
-            <div class="bg-white rounded-lg shadow-xl p-8 md:p-12 max-w-4xl mx-auto">
-                <h2 class="text-3xl md:text-4xl font-bold text-center mb-8">Contact Us Today</h2>
-                
-                <!-- Contact Information -->
-                <div class="grid md:grid-cols-2 gap-8 mb-12">
-                    <div class="space-y-4">
-                        <div class="flex items-center space-x-3">
-                            <i class="fas fa-building text-primary text-xl w-6"></i>
-                            <span class="text-gray-700">Arizona Medical Marketing Team</span>
-                        </div>
-                        <div class="flex items-center space-x-3">
-                            <i class="fas fa-phone text-primary text-xl w-6"></i>
-                            <a href="tel:623-696-0890" class="text-gray-700 hover:text-primary transition">623-696-0890</a>
-                        </div>
-                        <div class="flex items-center space-x-3">
-                            <i class="fas fa-envelope text-primary text-xl w-6"></i>
-                            <a href="mailto:Contact@ArizonaMedicalMarketing.com" class="text-gray-700 hover:text-primary transition">Contact@ArizonaMedicalMarketing.com</a>
-                        </div>
-                    </div>
-                    <div class="space-y-4">
-                        <div class="flex items-center space-x-3">
-                            <i class="fas fa-globe text-primary text-xl w-6"></i>
-                            <a href="https://www.ArizonaMedicalMarketing.com" class="text-gray-700 hover:text-primary transition">www.ArizonaMedicalMarketing.com</a>
-                        </div>
-                        <div class="flex items-start space-x-3">
-                            <i class="fas fa-map-marker-alt text-primary text-xl w-6 mt-1"></i>
-                            <span class="text-gray-700">
-                                4410 W Union Hills Dr<br>
-                                Suite 7-125<br>
-                                Glendale, AZ 85308
-                            </span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="h-px bg-gray-200 mb-12"></div>
-
-                <p class="text-center text-gray-600 mb-8">
-                    Ready to see how Arizona Medical Marketing can help you grow your practice? 
-                    Contact us now to schedule a consultation.
-                </p>
-                <form action="https://formspree.io/f/xpwzeprj" method="POST" class="space-y-6">
-                    <div class="grid md:grid-cols-2 gap-6">
-                        <div>
-                            <label class="block text-gray-700 mb-2" for="name">Name</label>
-                            <input type="text" id="name" name="name" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:border-primary" required>
-                        </div>
-                        <div>
-                            <label class="block text-gray-700 mb-2" for="email">Email</label>
-                            <input type="email" id="email" name="email" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:border-primary" required>
-                        </div>
-                    </div>
+        <section id="different" class="section">
+            <div class="container">
+                <div class="difference-header">
                     <div>
-                        <label class="block text-gray-700 mb-2" for="message">Message</label>
-                        <textarea id="message" name="message" rows="4" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:border-primary" required></textarea>
+                        <p class="section-label">A local advantage</p>
+                        <h2 class="section-title">What Makes Us Different</h2>
                     </div>
-                    <button type="submit" class="w-full bg-primary text-white py-3 rounded-lg hover:bg-red-800 transition">
-                        Send Message
-                    </button>
+                    <p class="section-intro">Corporate health networks have marketing departments and big budgets. Independent practices need something different — a consistent, familiar face in the offices that matter, not a call center or a mailer campaign.</p>
+                </div>
+                <div class="difference-grid">
+                    <article class="difference-item">
+                        <span class="number">01</span>
+                        <h3>Affordable by Design</h3>
+                        <p>Dedicated, in-person outreach to referring providers — for a fraction of the cost of a full-time hire.</p>
+                    </article>
+                    <article class="difference-item">
+                        <span class="number">02</span>
+                        <h3>Strategic &amp; Targeted</h3>
+                        <p>We identify the referring providers most likely to send patients your way, and focus our time there.</p>
+                    </article>
+                    <article class="difference-item">
+                        <span class="number">03</span>
+                        <h3>Streamlined for You</h3>
+                        <p>You focus on patient care. We handle the outreach, the rapport-building, and the follow-up.</p>
+                    </article>
+                    <article class="difference-item">
+                        <span class="number">04</span>
+                        <h3>Exclusive to Your Territory</h3>
+                        <p>We only represent one specialist per territory — never you and a competitor down the street. Availability is limited, so reach out before your territory is taken.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section id="help" class="section services">
+            <div class="container">
+                <div class="services-header">
+                    <div>
+                        <p class="section-label">Services</p>
+                        <h2 class="section-title">How We Can Help</h2>
+                    </div>
+                    <p class="section-intro">A plan built for your specialty, consistent field presence, and clear accountability — no guesswork, no black box.</p>
+                </div>
+                <div class="services-grid">
+                    <article class="service">
+                        <span class="service-icon"><i class="fa-solid fa-route" aria-hidden="true"></i></span>
+                        <h3>Custom Marketing Plans</h3>
+                        <p>We build a plan around your specialty, connecting you with the providers and other referral sources most likely to send patients your way.</p>
+                    </article>
+                    <article class="service">
+                        <span class="service-icon"><i class="fa-solid fa-hospital-user" aria-hidden="true"></i></span>
+                        <h3>Office Visits That Count</h3>
+                        <p>Regular in-person visits to the providers most likely to refer to you — turning cold introductions into familiar faces and real referrals.</p>
+                    </article>
+                    <article class="service">
+                        <span class="service-icon"><i class="fa-solid fa-diagram-project" aria-hidden="true"></i></span>
+                        <h3>Referral Management</h3>
+                        <p>We track, organize, and strengthen your referral sources, so every one of them keeps working for your practice.</p>
+                    </article>
+                    <article class="service">
+                        <span class="service-icon"><i class="fa-solid fa-chart-line" aria-hidden="true"></i></span>
+                        <h3>Detailed Reporting</h3>
+                        <p>Bi-weekly or monthly reports showing exactly which offices we visited and how the numbers are trending.</p>
+                    </article>
+                    <article class="service">
+                        <span class="service-icon"><i class="fa-solid fa-user-check" aria-hidden="true"></i></span>
+                        <h3>Dedicated Point of Contact</h3>
+                        <p>You'll always know exactly who to reach, and where things stand with your outreach — accountability you can trust.</p>
+                    </article>
+                    <article class="service">
+                        <span class="service-icon"><i class="fa-solid fa-utensils" aria-hidden="true"></i></span>
+                        <h3>Meetings, Lunches &amp; Introductions</h3>
+                        <p>We arrange face-to-face meetings between providers — including lunches — to get things started on the right foot. Call us for the details.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="photo-band" aria-label="Provider networking lunch">
+            <img src="provider-networking-lunch.webp" width="1586" height="992" alt="Medical providers talking over a catered conference-room lunch" loading="lazy">
+            <div class="photo-caption">
+                <strong>Relationships start face to face.</strong>
+                <p>We create the introductions and consistent follow-through that help your practice become a trusted referral choice.</p>
+            </div>
+        </section>
+
+        <section class="section testimonials" aria-labelledby="testimonials-title">
+            <div class="container">
+                <div class="testimonials-header">
+                    <p class="section-label">From local practices</p>
+                    <h2 id="testimonials-title" class="section-title">What Our Clients Are Saying</h2>
+                </div>
+                <div class="quotes">
+                    <blockquote>Our presence in the local community has really grown — we're becoming familiar in offices throughout our area, and we've been very happy with the increase in referrals we're receiving.</blockquote>
+                    <blockquote>We used to have slow days — now we stay busy with a consistent flow all day long. Our average reimbursement more than covers the cost of the service. It's working out great.</blockquote>
+                    <blockquote>Working with Arizona Medical Marketing has been a great investment — we're getting multiple referrals from multiple locations, not just one-off leads from an internet search. Other referral services we've tried charged per patient whether they showed up or not. This has worked out far better.</blockquote>
+                </div>
+            </div>
+        </section>
+
+        <section id="faq" class="section faq">
+            <div class="container faq-layout">
+                <div>
+                    <p class="section-label">Common questions</p>
+                    <h2 class="section-title">What Practices Ask Us</h2>
+                    <p class="section-intro">Straight answers about how our physician referral outreach works.</p>
+                </div>
+                <div class="faq-list">
+                    <details>
+                        <summary>Is this a contract?</summary>
+                        <p>No contract — we're month to month. We do ask that you commit to at least six months to give it time to build results, and if you ever want to cancel, we just ask for thirty days' notice. If you're not seeing value, we don't want you sticking around out of obligation.</p>
+                    </details>
+                    <details>
+                        <summary>How is this different from a typical marketing agency?</summary>
+                        <p>We're not running ads or managing your social media — we're building real, face-to-face trust with the providers who send you patients. It's in-person outreach, not digital marketing.</p>
+                    </details>
+                    <details>
+                        <summary>Do you work with my specialty?</summary>
+                        <p>Yes — we work with specialist practices of any kind, and connect you with the providers and other referring physicians most likely to send patients your way.</p>
+                    </details>
+                    <details>
+                        <summary>How soon will I start seeing results?</summary>
+                        <p>It takes time to build a network of providers who know and trust you, which is part of why we ask for that six-month commitment. You'll see activity and reporting from the start, but real growth builds over those first few months.</p>
+                    </details>
+                    <details>
+                        <summary>Is my territory still available?</summary>
+                        <p>Since we only represent one specialist per territory, availability depends on your specialty and area — call us to check.</p>
+                    </details>
+                    <details>
+                        <summary>What exactly happens during an office visit?</summary>
+                        <p>We build and maintain connections with the providers that matter most to your practice. Happy to walk you through exactly how it works on a call.</p>
+                    </details>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="section contact">
+            <div class="container contact-layout">
+                <div class="contact-copy">
+                    <p class="section-label">Start a conversation</p>
+                    <h2 class="section-title">Contact Us Today</h2>
+                    <p>Ready to see how Arizona Medical Marketing can help you grow your practice? Call, text, email, or send us a message below — whatever's easiest for you.</p>
+                    <p>No pressure — just a quick conversation to see if we're a fit.</p>
+                    <div class="contact-list">
+                        <div class="contact-line">
+                            <i class="fa-solid fa-phone" aria-hidden="true"></i>
+                            <a href="tel:6236960890">623-696-0890</a>
+                        </div>
+                        <div class="contact-line">
+                            <i class="fa-solid fa-envelope" aria-hidden="true"></i>
+                            <a href="mailto:Contact@ArizonaMedicalMarketing.com">Contact@ArizonaMedicalMarketing.com</a>
+                        </div>
+                        <div class="contact-line">
+                            <i class="fa-solid fa-location-dot" aria-hidden="true"></i>
+                            <address>4410 W Union Hills Dr, Suite 7-125<br>Glendale, AZ 85308</address>
+                        </div>
+                    </div>
+                </div>
+                <form class="contact-card" action="https://formspree.io/f/xpwzeprj" method="POST">
+                    <div class="form-grid">
+                        <div class="field">
+                            <label for="name">Name</label>
+                            <input id="name" name="name" type="text" autocomplete="name" required>
+                        </div>
+                        <div class="field">
+                            <label for="email">Email</label>
+                            <input id="email" name="email" type="email" autocomplete="email" required>
+                        </div>
+                    </div>
+                    <div class="field">
+                        <label for="message">Message</label>
+                        <textarea id="message" name="message" rows="6" required></textarea>
+                    </div>
+                    <button class="button" type="submit">Send Message <i class="fa-solid fa-paper-plane" aria-hidden="true"></i></button>
+                    <p class="contact-note">Your message goes directly to the Arizona Medical Marketing team.</p>
                 </form>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Footer -->
-    <footer class="bg-gray-900 text-white py-8">
-        <div class="container mx-auto px-6">
-            <div class="flex flex-col md:flex-row justify-between items-center">
-                <div class="mb-4 md:mb-0">
-                    <img src="logo.png" alt="Arizona Medical Marketing" class="h-10 w-auto object-contain">
-                </div>
-                <div class="text-center md:text-right">
-                    <p>&copy; 2024 Arizona Medical Marketing. All rights reserved.</p>
-                </div>
+        <nav class="quick-actions" aria-label="Contact options">
+            <a href="tel:6236960890"><i class="fa-solid fa-phone" aria-hidden="true"></i> Call</a>
+            <a href="sms:6236960890"><i class="fa-solid fa-comment-dots" aria-hidden="true"></i> Text</a>
+            <a href="mailto:Contact@ArizonaMedicalMarketing.com"><i class="fa-solid fa-envelope" aria-hidden="true"></i> Email</a>
+            <a href="#contact"><i class="fa-solid fa-pen-to-square" aria-hidden="true"></i> Form</a>
+        </nav>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-top">
+                <img class="footer-logo" src="logo.png" alt="Arizona Medical Marketing">
+                <p class="footer-tagline">Professional. Reliable. Results-Driven.</p>
             </div>
+            <p class="service-area">Serving Phoenix, Scottsdale, Tempe, Mesa, Chandler, Gilbert, Glendale, Peoria, Surprise, Avondale, Goodyear, Buckeye, Litchfield Park, Fountain Hills, Paradise Valley, and Queen Creek.</p>
+            <p class="copyright">&copy; 2026 Arizona Medical Marketing. All rights reserved.</p>
         </div>
     </footer>
 
     <script>
-        function toggleMenu() {
-            const menu = document.getElementById('mobile-menu');
-            menu.classList.toggle('hidden');
+        const menuButton = document.querySelector('.menu-toggle');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        function setMenu(open) {
+            mobileMenu.classList.toggle('open', open);
+            menuButton.setAttribute('aria-expanded', String(open));
+            menuButton.setAttribute('aria-label', open ? 'Close navigation menu' : 'Open navigation menu');
+            menuButton.innerHTML = `<i class="fa-solid ${open ? 'fa-xmark' : 'fa-bars'}" aria-hidden="true"></i>`;
+            document.body.classList.toggle('menu-open', open);
         }
+
+        menuButton.addEventListener('click', () => {
+            setMenu(menuButton.getAttribute('aria-expanded') !== 'true');
+        });
+
+        mobileMenu.querySelectorAll('a').forEach((link) => {
+            link.addEventListener('click', () => setMenu(false));
+        });
+
+        document.addEventListener('keydown', (event) => {
+            if (event.key === 'Escape') setMenu(false);
+        });
+
+        window.addEventListener('resize', () => {
+            if (window.innerWidth > 960) setMenu(false);
+        });
     </script>
 </body>
 </html>
