@@ -1,78 +1,105 @@
-# Arizona Medical Marketing Website
+# Arizona Medical Marketing
 
-A modern, responsive single-page website for Arizona Medical Marketing, specializing in connecting medical professionals with referral networks to grow their practices.
+Static marketing website for Arizona Medical Marketing, focused on connecting
+medical professionals with referral networks in Arizona.
 
-## Features
+Live site: [arizonamedicalmarketing.com](https://arizonamedicalmarketing.com)
 
-- Modern, responsive design
-- Mobile-friendly navigation
-- Tailwind CSS for styling
-- Contact form for lead generation
-- Optimized for performance and SEO
+## What is in this repository
 
-## Getting Started
+- `index.html` — primary responsive marketing page, FAQ, testimonials, and Formspree contact form
+- `card.html` — printable business-card layout with a generated QR code
+- `rack_page1.svg` — editable rack-card source artwork
+- `rack_page1.png` — exported rack-card artwork
+- `logo.png`, `favicon.*`, `cactus*.png`, `AZMM.png` — site and print assets
+- `medical-office-lobby.webp`, `provider-networking-lunch.webp` — optimized homepage photography
+- `robots.txt`, `sitemap.xml` — search-crawler policy and canonical URL discovery
+- `.github/workflows/deploy.yml` — GitHub Pages deployment workflow
 
-### Prerequisites
+The homepage uses HTML5, custom CSS, and Font Awesome via CDN. The business-card
+page uses Tailwind CSS via CDN and QRious for its QR code. There is no JavaScript
+compilation, npm dependency tree, or production bundle.
 
-- Node.js (v12 or higher)
-- npm (comes with Node.js)
+## Development with Nix
 
-### Installation
+The Nix flake is the supported development environment. It provides a static
+web server, Inkscape, ImageMagick, librsvg, Microsoft core fonts, and the
+repository helper commands.
 
-1. Clone the repository:
+Supported Nix platforms are Apple Silicon macOS and ARM or x86_64 Linux. Current
+Nixpkgs no longer supports Intel macOS.
+
 ```bash
-git clone https://github.com/your-username/ArizonaMedicalMarketing.git
-cd ArizonaMedicalMarketing
+direnv allow
+serve
 ```
 
-2. Install dependencies:
+Alternatively, enter the environment manually:
+
 ```bash
-npm install
+nix develop
+serve
 ```
 
-3. Start the development server:
+Open [http://localhost:3000](http://localhost:3000).
+
+The first Nix environment load may download files named `*.exe`, such as
+`times32.exe`. These are Microsoft core-font installer archives that Nix
+extracts; they are not application executables built or shipped by this
+project.
+
+### Development commands
+
+| Command | Purpose |
+| --- | --- |
+| `serve` | Serve the static site on port 3000 |
+| `convert-svg <input.svg> [output.png] [dpi]` | Export an SVG to PNG; DPI defaults to 600 |
+| `menu` | Show the commands and tools provided by the Nix shell |
+
+### Quick preview without Nix
+
+With Python 3 installed:
+
 ```bash
-npm start
+python3 -m http.server 3000
 ```
 
-4. Open your browser and visit:
-```
-http://localhost:3000
-```
+This only serves the site. Image conversion additionally requires librsvg and
+ImageMagick.
 
-## Project Structure
+## Rack-card export
 
-```
-ArizonaMedicalMarketing/
-├── index.html          # Main HTML file
-├── logo.png           # Company logo
-├── package.json       # Project dependencies and scripts
-└── node_modules/      # Node.js dependencies (generated)
+For the existing 3.86 by 8.39 inch, 600-DPI rack-card export, run:
+
+```bash
+./convert_svg.sh
 ```
 
-## Development
-
-- The website is built using HTML5 and Tailwind CSS
-- Tailwind CSS is loaded via CDN for simplicity
-- Font Awesome is used for icons
-- The site is fully responsive and works on all modern browsers
+For other SVG files, use the `convert-svg` helper supplied by the Nix shell.
 
 ## Deployment
 
-This website is automatically deployed to GitHub Pages using GitHub Actions. You can view the live site at:
-```
-https://[your-username].github.io/ArizonaMedicalMarketing/
-```
+Pull requests run `scripts/validate_site.py` to check the required deployment
+files, canonical metadata, contact-form contract, structured data, and crawler
+configuration. Pushes to `main` run the same validation before deploying the
+repository's static files to GitHub Pages through
+`.github/workflows/deploy.yml`. The `CNAME` file configures the custom
+`www.arizonamedicalmarketing.com` domain.
 
-### Deployment Process
-- The site is automatically deployed when changes are pushed to the main branch
-- Deployment status can be monitored in the GitHub Actions tab
-- The deployment workflow is defined in `.github/workflows/deploy.yml`
+The public canonical URL is `https://arizonamedicalmarketing.com/`; the `www`
+hostname redirects there. The homepage includes matching canonical, Open Graph,
+Twitter Card, and `ProfessionalService` structured metadata.
 
-## License
+After a significant homepage deployment, submit
+`https://arizonamedicalmarketing.com/sitemap.xml` in Google Search Console and
+request indexing for the canonical homepage. Maintain the Google Business
+Profile as a service-area business unless the published address is staffed and
+open to customers.
+
+## Project conventions
+
+Contributor and coding-agent instructions are maintained in [`AGENTS.md`](AGENTS.md).
+`CLAUDE.md` is a symlink to that authoritative file so the instructions remain
+identical across coding agents.
 
 This project is proprietary and confidential. All rights reserved.
-
-## Contact
-
-For any inquiries, please reach out through the contact form on the website.
