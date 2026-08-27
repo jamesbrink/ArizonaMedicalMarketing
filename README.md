@@ -79,9 +79,12 @@ For other SVG files, use the `convert-svg` helper supplied by the Nix shell.
 
 ## Deployment
 
-Pushes to `main` automatically deploy the repository's static files to GitHub
-Pages through `.github/workflows/deploy.yml`. The `CNAME` file configures the
-custom `www.arizonamedicalmarketing.com` domain.
+Pull requests run `scripts/validate_site.py` to check the required deployment
+files, canonical metadata, contact-form contract, structured data, and crawler
+configuration. Pushes to `main` run the same validation before deploying the
+repository's static files to GitHub Pages through
+`.github/workflows/deploy.yml`. The `CNAME` file configures the custom
+`www.arizonamedicalmarketing.com` domain.
 
 The public canonical URL is `https://arizonamedicalmarketing.com/`; the `www`
 hostname redirects there. The homepage includes matching canonical, Open Graph,
