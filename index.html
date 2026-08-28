@@ -374,7 +374,7 @@
                 left: 0;
                 z-index: 60;
                 display: grid;
-                grid-template-columns: 1fr 1fr;
+                grid-template-columns: repeat(4, 1fr);
                 padding-bottom: env(safe-area-inset-bottom);
                 border-top: 1px solid rgba(101, 4, 10, 0.2);
                 background: var(--white);
@@ -385,12 +385,14 @@
                 min-height: 64px;
                 align-items: center;
                 justify-content: center;
-                gap: 9px;
+                gap: 6px;
                 color: var(--maroon);
+                font-size: 0.8rem;
                 font-weight: 850;
                 text-decoration: none;
+                white-space: nowrap;
             }
-            .mobile-action-bar a:first-child { border-right: 1px solid var(--line); }
+            .mobile-action-bar a:not(:last-child) { border-right: 1px solid var(--line); }
         }
 
         @media (prefers-reduced-motion: reduce) {
@@ -665,6 +667,8 @@
     <nav class="mobile-action-bar" aria-label="Quick mobile contact options">
         <a href="tel:6236960890"><i class="fa-solid fa-phone" aria-hidden="true"></i> Call</a>
         <a href="sms:6236960890"><i class="fa-solid fa-comment-dots" aria-hidden="true"></i> Text</a>
+        <a href="mailto:Contact@ArizonaMedicalMarketing.com"><i class="fa-solid fa-envelope" aria-hidden="true"></i> Email</a>
+        <a href="#contact"><i class="fa-solid fa-pen-to-square" aria-hidden="true"></i> Form</a>
     </nav>
 
     <script>
