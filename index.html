@@ -334,10 +334,36 @@
             blockquote { padding: 34px 0; border-bottom: 1px solid var(--line); }
             blockquote:not(:first-child) { padding-left: 0; border-left: 0; }
             blockquote:last-child { border-bottom: 0; }
+            body { padding-bottom: calc(64px + env(safe-area-inset-bottom)); }
+            .mobile-action-bar {
+                position: fixed;
+                right: 0;
+                bottom: 0;
+                left: 0;
+                z-index: 60;
+                display: grid;
+                grid-template-columns: repeat(4, 1fr);
+                padding-bottom: env(safe-area-inset-bottom);
+                border-top: 1px solid rgba(101, 4, 10, 0.2);
+                background: var(--white);
+                box-shadow: 0 -10px 28px rgba(45, 29, 20, 0.12);
+            }
+            .mobile-action-bar a {
+                display: flex;
+                min-height: 64px;
+                align-items: center;
+                justify-content: center;
+                gap: 6px;
+                color: var(--maroon);
+                font-size: 0.8rem;
+                font-weight: 850;
+                text-decoration: none;
+                white-space: nowrap;
+            }
+            .mobile-action-bar a:not(:last-child) { border-right: 1px solid var(--line); }
         }
 
         @media (max-width: 640px) {
-            body { padding-bottom: calc(64px + env(safe-area-inset-bottom)); }
             .container { width: min(100% - 32px, 1160px); }
             .section { padding: 76px 0; }
             .nav-shell { min-height: 72px; }
@@ -367,32 +393,6 @@
             .quick-actions a { min-height: 82px; border-bottom: 1px solid var(--line); }
             .quick-actions a:nth-child(2) { border-right: 0; }
             .quick-actions a:nth-child(n+3) { border-bottom: 0; }
-            .mobile-action-bar {
-                position: fixed;
-                right: 0;
-                bottom: 0;
-                left: 0;
-                z-index: 60;
-                display: grid;
-                grid-template-columns: repeat(4, 1fr);
-                padding-bottom: env(safe-area-inset-bottom);
-                border-top: 1px solid rgba(101, 4, 10, 0.2);
-                background: var(--white);
-                box-shadow: 0 -10px 28px rgba(45, 29, 20, 0.12);
-            }
-            .mobile-action-bar a {
-                display: flex;
-                min-height: 64px;
-                align-items: center;
-                justify-content: center;
-                gap: 6px;
-                color: var(--maroon);
-                font-size: 0.8rem;
-                font-weight: 850;
-                text-decoration: none;
-                white-space: nowrap;
-            }
-            .mobile-action-bar a:not(:last-child) { border-right: 1px solid var(--line); }
         }
 
         @media (prefers-reduced-motion: reduce) {
