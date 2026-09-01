@@ -11,6 +11,8 @@ import xml.etree.ElementTree as ET
 ROOT = Path(__file__).resolve().parents[1]
 CANONICAL_URL = "https://arizonamedicalmarketing.com/"
 FORM_ENDPOINT = "https://formspree.io/f/xpwzeprj"
+GOOGLE_TAG_ID = "AW-18264316897"
+GOOGLE_CONVERSION_DESTINATION = "AW-18264316897/IMgFCOzJrt0cEOG3jYVE"
 REQUIRED_FILES = (
     "index.html",
     "logo.png",
@@ -71,8 +73,9 @@ def validate() -> None:
     missing = [name for name in REQUIRED_FILES if not (ROOT / name).is_file()]
     require(not missing, f"Missing required deploy files: {', '.join(missing)}")
 
+    index_html = (ROOT / "index.html").read_text(encoding="utf-8")
     parser = SiteParser()
-    parser.feed((ROOT / "index.html").read_text(encoding="utf-8"))
+    parser.feed(index_html)
 
     require(parser.canonical == CANONICAL_URL, "Canonical URL is missing or incorrect")
     require(parser.form_action == FORM_ENDPOINT, "Formspree endpoint changed")
@@ -81,10 +84,18 @@ def validate() -> None:
         "Physician Referral Marketing" in " ".join(parser.h1_parts),
         "Search-focused H1 is missing",
     )
+    google_tag_source = f"https://www.googletagmanager.com/gtag/js?id={GOOGLE_TAG_ID}"
+    require(google_tag_source in parser.script_sources, "Google tag loader is missing")
+    require(f"gtag('config', '{GOOGLE_TAG_ID}')" in index_html, "Google tag config is missing")
     require(
-        not any(token in source.lower() for source in parser.script_sources for token in ("analytics", "gtag", "googletagmanager")),
-        "Analytics script found",
+        f"'send_to': '{GOOGLE_CONVERSION_DESTINATION}'" in index_html,
+        "Google Ads lead conversion event is missing",
     )
+    require("onSuccess: ({ form })" in index_html, "Conversion event is not gated on form success")
+
+    card_html = (ROOT / "card.html").read_text(encoding="utf-8")
+    require(google_tag_source in card_html, "Business-card page is missing the Google tag")
+    require(f"gtag('config', '{GOOGLE_TAG_ID}')" in card_html, "Business-card Google tag config is missing")
 
     structured_data = json.loads("".join(parser.json_ld_parts))
     require(structured_data.get("@type") == "ProfessionalService", "Unexpected JSON-LD type")
