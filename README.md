@@ -16,9 +16,11 @@ Live site: [arizonamedicalmarketing.com](https://arizonamedicalmarketing.com)
 - `robots.txt`, `sitemap.xml`: search-crawler policy and canonical URL discovery
 - `.github/workflows/deploy.yml`: GitHub Pages deployment workflow
 
-The homepage uses HTML5, custom CSS, and Font Awesome via CDN. The business-card
-page uses Tailwind CSS via CDN and QRious for its QR code. There is no JavaScript
-compilation, npm dependency tree, or production bundle.
+The homepage uses HTML5, custom CSS, Font Awesome, and Formspree's AJAX helper
+via CDN. The business-card page uses Tailwind CSS via CDN and QRious for its QR
+code. All HTML pages load the Google Ads tag, and the homepage records a lead
+conversion only after Formspree confirms a successful contact-form submission.
+There is no JavaScript compilation, npm dependency tree, or production bundle.
 
 ## Development with Nix
 

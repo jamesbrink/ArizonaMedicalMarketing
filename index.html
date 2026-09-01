@@ -7,6 +7,14 @@
     <meta name="robots" content="index, follow, max-image-preview:large">
     <meta name="theme-color" content="#8b0000">
     <title>Physician Referral Marketing in Phoenix, AZ | Arizona Medical Marketing</title>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18264316897"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'AW-18264316897');
+    </script>
     <link rel="canonical" href="https://arizonamedicalmarketing.com/">
     <link rel="icon" type="image/png" href="favicon.png">
     <link rel="icon" type="image/x-icon" href="favicon.ico">
@@ -295,6 +303,10 @@
         .form-help { margin: -8px 0 20px; color: var(--muted); font-size: 0.82rem; }
         .contact-card .button { width: 100%; cursor: pointer; }
         .contact-note { margin: 18px 0 0; color: var(--muted); font-size: 0.86rem; text-align: center; }
+        .form-status { display: none; margin: 0 0 20px; border-radius: 4px; padding: 13px 14px; font-weight: 700; }
+        .form-status[data-fs-active] { display: block; }
+        .form-success { border: 1px solid #a8d5b5; background: #effaf2; color: #215c31; }
+        .form-error { border: 1px solid #e0abab; background: #fff1f1; color: #7a1717; }
         .quick-actions { display: grid; grid-template-columns: repeat(4, 1fr); border-bottom: 1px solid var(--line); background: var(--white); }
         .quick-actions a {
             display: flex;
@@ -619,24 +631,26 @@
                         </div>
                     </div>
                 </div>
-                <form class="contact-card" action="https://formspree.io/f/xpwzeprj" method="POST">
+                <form id="contact-form" class="contact-card" action="https://formspree.io/f/xpwzeprj" method="POST">
                     <h3>Check Your Specialty and Territory</h3>
                     <p class="form-intro">Include your specialty and city or ZIP in the message. We’ll confirm availability and contact you within one business day.</p>
+                    <div class="form-status form-success" data-fs-success role="status" tabindex="-1">Thanks! Your message was sent. We’ll contact you within one business day.</div>
+                    <div class="form-status form-error" data-fs-error role="alert"></div>
                     <div class="form-grid">
                         <div class="field">
                             <label for="name">Name</label>
-                            <input id="name" name="name" type="text" autocomplete="name" required>
+                            <input id="name" name="name" type="text" autocomplete="name" data-fs-field required>
                         </div>
                         <div class="field">
                             <label for="email">Email</label>
-                            <input id="email" name="email" type="email" autocomplete="email" required>
+                            <input id="email" name="email" type="email" autocomplete="email" data-fs-field required>
                         </div>
                     </div>
                     <div class="field">
                         <label for="message">Specialty, territory, and message</label>
-                        <textarea id="message" name="message" rows="6" placeholder="Example: Cardiology practice in Scottsdale. We’d like to learn whether our territory is available." required></textarea>
+                        <textarea id="message" name="message" rows="6" placeholder="Example: Cardiology practice in Scottsdale. We’d like to learn whether our territory is available." data-fs-field required></textarea>
                     </div>
-                    <button class="button" type="submit">Check My Territory <i class="fa-solid fa-paper-plane" aria-hidden="true"></i></button>
+                    <button class="button" type="submit" data-fs-submit-btn>Check My Territory <i class="fa-solid fa-paper-plane" aria-hidden="true"></i></button>
                     <p class="contact-note">Your message goes directly to the Arizona Medical Marketing team.</p>
                 </form>
             </div>
@@ -706,5 +720,28 @@
             if (window.innerWidth > 960) setMenu(false);
         });
     </script>
+    <script>
+        window.formspree = window.formspree || function () {
+            (formspree.q = formspree.q || []).push(arguments);
+        };
+
+        formspree('initForm', {
+            formElement: '#contact-form',
+            formId: 'xpwzeprj',
+            onSuccess: ({ form }) => {
+                gtag('event', 'conversion', {
+                    'send_to': 'AW-18264316897/IMgFCOzJrt0cEOG3jYVE',
+                    'value': 1.0,
+                    'currency': 'USD'
+                });
+
+                form.reset();
+                const successMessage = form.querySelector('[data-fs-success]');
+                successMessage.setAttribute('data-fs-active', '');
+                successMessage.focus();
+            }
+        });
+    </script>
+    <script src="https://unpkg.com/@formspree/ajax@1.1.5/dist/global.js" defer></script>
 </body>
 </html>
