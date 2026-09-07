@@ -56,3 +56,11 @@ Do not commit directly to `main` unless explicitly requested.
 `.github/workflows/deploy.yml` publishes the repository root to GitHub Pages on
 pushes to `main`. Deployment changes must preserve the permissions required by
 GitHub Pages and the `www.arizonamedicalmarketing.com` custom domain.
+
+## Analytics
+
+`analytics.js` configures James's temporary GA4 destination on the homepage and
+business-card page only, gated to production hosts and known paths. Preserve
+Josh's separate Google Ads tag and Formspree-success conversion. Do not apply
+global consent/configuration changes that alter Ads behavior. Keep the privacy
+notice and README consistent with actual collection.
