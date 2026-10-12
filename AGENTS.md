@@ -61,6 +61,7 @@ GitHub Pages and the `www.arizonamedicalmarketing.com` custom domain.
 
 `analytics.js` configures James's temporary GA4 destination on the homepage and
 business-card page only, gated to production hosts and known paths. Preserve
-Josh's separate Google Ads tag and Formspree-success conversion. Do not apply
+Josh's separate Google Ads tag, Formspree-success conversion, and
+call/text/email contact-click conversion. Do not apply
 global consent/configuration changes that alter Ads behavior. Keep the privacy
 notice and README consistent with actual collection.

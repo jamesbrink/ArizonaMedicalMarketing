@@ -13,6 +13,7 @@ CANONICAL_URL = "https://arizonamedicalmarketing.com/"
 FORM_ENDPOINT = "https://formspree.io/f/xpwzeprj"
 GOOGLE_TAG_ID = "AW-18264316897"
 GOOGLE_CONVERSION_DESTINATION = "AW-18264316897/IMgFCOzJrt0cEOG3jYVE"
+CONTACT_CLICK_DESTINATION = "AW-18264316897/poGqCNqK2JodEOG3jYVE"
 REQUIRED_FILES = (
     "index.html",
     "logo.png",
@@ -92,6 +93,10 @@ def validate() -> None:
         "Google Ads lead conversion event is missing",
     )
     require("onSuccess: ({ form })" in index_html, "Conversion event is not gated on form success")
+    require(
+        f"const CONTACT_CLICK_CONVERSION = '{CONTACT_CLICK_DESTINATION}'" in index_html,
+        "Contact-click conversion is missing",
+    )
 
     card_html = (ROOT / "card.html").read_text(encoding="utf-8")
     require(google_tag_source in card_html, "Business-card page is missing the Google tag")
