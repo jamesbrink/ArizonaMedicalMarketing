@@ -19,7 +19,8 @@ Live site: [arizonamedicalmarketing.com](https://arizonamedicalmarketing.com)
 The homepage uses HTML5, custom CSS, Font Awesome, and Formspree's AJAX helper
 via CDN. The business-card page uses Tailwind CSS via CDN and QRious for its QR
 code. The homepage and business-card page load the Google Ads tag, and the homepage records a lead
-conversion only after Formspree confirms a successful contact-form submission.
+conversion only after Formspree confirms a successful contact-form submission,
+and a separate Contact conversion when a visitor taps a call, text, or email link.
 There is no JavaScript compilation, npm dependency tree, or production bundle.
 
 ## Development with Nix
