@@ -42,7 +42,7 @@ class SiteParser(HTMLParser):
             self.canonical = values.get("href")
         elif tag == "form":
             self.form_action = values.get("action")
-        elif tag in {"input", "textarea"} and values.get("name"):
+        elif tag in {"input", "select", "textarea"} and values.get("name"):
             self.form_fields.append(values["name"] or "")
         elif tag == "h1":
             self._in_h1 = True
@@ -80,7 +80,7 @@ def validate() -> None:
 
     require(parser.canonical == CANONICAL_URL, "Canonical URL is missing or incorrect")
     require(parser.form_action == FORM_ENDPOINT, "Formspree endpoint changed")
-    require(parser.form_fields == ["name", "email", "message"], "Contact form fields changed")
+    require(parser.form_fields == ["name", "email", "heard_about_us", "message"], "Contact form fields changed")
     require(
         "Physician Referral Marketing" in " ".join(parser.h1_parts),
         "Search-focused H1 is missing",

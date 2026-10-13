@@ -94,7 +94,7 @@
         body.menu-open { overflow: hidden; }
         img { display: block; max-width: 100%; height: auto; }
         a { color: inherit; }
-        button, input, textarea { font: inherit; }
+        button, input, select, textarea { font: inherit; }
         h1, h2, h3, p { margin-top: 0; }
         h1, h2, h3 {
             font-family: Georgia, "Times New Roman", serif;
@@ -130,7 +130,7 @@
             transition: background 160ms ease, border-color 160ms ease, transform 160ms ease;
         }
         .button:hover { background: var(--maroon-dark); transform: translateY(-1px); }
-        .button:focus-visible, a:focus-visible, button:focus-visible, summary:focus-visible, input:focus-visible, textarea:focus-visible {
+        .button:focus-visible, a:focus-visible, button:focus-visible, summary:focus-visible, input:focus-visible, select:focus-visible, textarea:focus-visible {
             outline: 3px solid #f3ad59;
             outline-offset: 3px;
         }
@@ -293,7 +293,7 @@
         .form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
         .field { display: grid; gap: 8px; margin-bottom: 20px; }
         .field label { color: #3e4650; font-size: 0.9rem; font-weight: 800; }
-        .field input, .field textarea {
+        .field input, .field select, .field textarea {
             width: 100%;
             border: 1px solid #d8d3cc;
             border-radius: 4px;
@@ -301,7 +301,7 @@
             padding: 13px 14px;
             color: var(--ink);
         }
-        .field input:focus, .field textarea:focus { border-color: var(--maroon); outline: 3px solid rgba(139, 0, 0, 0.12); }
+        .field input:focus, .field select:focus, .field textarea:focus { border-color: var(--maroon); outline: 3px solid rgba(139, 0, 0, 0.12); }
         .form-help { margin: -8px 0 20px; color: var(--muted); font-size: 0.82rem; }
         .contact-card .button { width: 100%; cursor: pointer; }
         .contact-note { margin: 18px 0 0; color: var(--muted); font-size: 0.86rem; text-align: center; }
@@ -647,6 +647,19 @@
                             <label for="email">Email</label>
                             <input id="email" name="email" type="email" autocomplete="email" data-fs-field required>
                         </div>
+                    </div>
+                    <div class="field">
+                        <label for="heard_about_us">How did you hear about us?</label>
+                        <select id="heard_about_us" name="heard_about_us" data-fs-field required>
+                            <option value="" selected disabled>Choose one</option>
+                            <option>Google search</option>
+                            <option>Google ad</option>
+                            <option>Google Maps</option>
+                            <option>Referral from a colleague</option>
+                            <option>LinkedIn</option>
+                            <option>Business card or flyer</option>
+                            <option>Other</option>
+                        </select>
                     </div>
                     <div class="field">
                         <label for="message">Specialty, territory, and message</label>
