@@ -7,7 +7,7 @@ Live site: [arizonamedicalmarketing.com](https://arizonamedicalmarketing.com)
 
 ## What is in this repository
 
-- `index.html`: primary responsive marketing page, FAQ, testimonials, and Formspree contact form (name, email, "How did you hear about us?" menu, message)
+- `index.html`: primary responsive marketing page, FAQ, testimonials, and Formspree contact form (name, email, optional "How did you hear about us?" text field, message)
 - `card.html`: printable business-card layout with a generated QR code
 - `rack_page1.svg`: editable rack-card source artwork
 - `rack_page1.png`: exported rack-card artwork
